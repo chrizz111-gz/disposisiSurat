@@ -1,0 +1,69 @@
+.login-form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login-form input {
+    padding: 12px;
+    border: 1px solid #bfbfbf;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.login-form input:focus {
+    border-color: #135bc7;
+}
+
+.login-form button {
+    padding: 12px;
+    background: #135bc7;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.login-form button:hover {
+    background: #0f4aa4;
+}
+
+/* Wrapper posisi untuk mata */
+.input-box {
+    position: relative;
+}
+
+/* Input form di dalam box */
+.input-box input {
+    width: 100%;
+    padding: 12px 40px 12px 12px; /* kasih ruang kanan buat icon */
+    border-radius: 6px;
+    border: 1px solid #bfbfbf;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* Ikon mata */
+.toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;     /* ukuran icon */
+    height: 22px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.toggle:hover {
+    opacity: 1;
+}
+
