@@ -1,70 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <meta charset="UTF-8" />
-    <title>Disposisi Surat</title>
-    <link rel="stylesheet" href="../css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMKN 2 SINGOSARI - Sistem Manajemen Surat</title>
+    <link rel="stylesheet" href="../css/home.css">
 </head>
+
 <body>
 
-    <!-- SIDEBAR (benar) -->
-    <div class="sidebar">
-        <img src="../assets/close.png" id= "closeBtn" class="close-sidebar">
+    <!-- ================= HEADER ================= -->
+    <header class="topbar">
+        <img src="../assets/logo.png" class="logo">
+        <h2>SMKN 2 SINGOSARI</h2>
+    </header>
 
-        <div class="menu-item">
-            <img src="../assets/home.png" class="icon">
-            <span>Home</span>
-        </div>
+    <!-- ================= HAMBURGER BUTTON ================= -->
+    <button id="toggleSidebar" class="hamburger closed">III</button>
 
-        <div class="menu-item">
-            <img src="../assets/user.png" class="icon">
-            <span>Akun</span>
-        </div>
+    <!-- ================= WRAPPER BG ================= -->
+    <div class="wrapper">
 
-        <div class="menu-title">Menu</div>
+        <!-- ================= SIDEBAR ================= -->
+        <aside id="sidebar" class="sidebar hidden">
+            <button class="side-btn">HOME <img src="../assets/home.png" class="icon"></button>
+            <button class="side-btn">USER <img src="../assets/user.png" class="icon"></button>
+            <button class="side-btn">SURAT MASUK <img src="../assets/in.png" class="icon"></button>
+            <button class="side-btn">SURAT KELUAR <img src="../assets/out.png" class="icon"></button>
+            <button class="side-btn">HISTORY <img src="../assets/history.png" class="icon"></button>
+            <button class="side-btn">USER MANAGEMENT <img src="../assets/users.png" class="icon"></button>
+        </aside>
 
-        <div class="menu-item">
-            <img src="../assets/surat_masuk.png" class="icon">
-            <span>Surat Masuk</span>
-        </div>
+        <!-- ================= CONTENT ================= -->
+        <main class="content">
 
-        <div class="menu-item">
-            <img src="../assets/surat_keluar.png" class="icon">
-            <span>Surat Keluar</span>
-        </div>
+            <!-- SURAT MASUK CARD -->
+            <div class="card blue">
+                <div class="card-header">
+                    <span class="tanggal">Senin, 12 Oktober 2025</span>
+                    <span class="title">
+    <img src="../assets/surat-masuk.png" class="title-icon">
+    SURAT MASUK
+</span>
 
-        <div class="menu-item">
-            <img src="../assets/history.png" class="icon">
-            <span>History</span>
-        </div>
-    </div>
+                </div>
 
+                <p>No Surat<br>Asal<br>Perihal<br>Tgl Diterima</p>
 
-    <!-- TOPBAR -->
-    <div class="topbar">
-        <img src="../assets/logo.png" class="logo" />
-        <span class="title">SMKN 2 SINGOSARI</span>
-        <img src="../assets/menu_icon.png" class="menu-toggle">
-    </div>
+                <div class="card-footer">
+                    <button class="btn-green">Terima</button>
+                    <button class="btn-blue">Lihat</button>
+                </div>
 
-    <!-- BACKGROUND -->
-    <div class="background"></div>
-
-    <div class="main-wrapper">
-
-        <div class="content-area">
-
-            <div class="surat-card">
-                <span>SURAT BARU</span>
-                <img src="../assets/mail.png" class="email-icon">
+                <img src="../assets/mascot1.png" class="maskot">
             </div>
 
-            <div class="floating-btn">+</div>
-        </div>
+            <!-- SURAT KELUAR CARD -->
+            <div class="card orange">
+                <div class="card-header">
+                    <span class="tanggal">Senin, 12 Oktober 2025</span>
+                    <span class="title">
+    <img src="../assets/surat-keluar.png" class="title-icon">
+    SURAT KELUAR
+</span>
 
+                </div>
+
+                <p>No Surat<br>Asal<br>Perihal<br>Tgl Diterima</p>
+
+                <div class="card-footer">
+                    <button class="btn-yellow">Proses</button>
+                    <button class="btn-blue">Lihat</button>
+                </div>
+
+                <img src="../assets/mascot2.png" class="maskot">
+            </div>
+
+        </main>
     </div>
 
     <script src="../js/home.js"></script>
 </body>
-
 </html>

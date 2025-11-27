@@ -1,0 +1,151 @@
+/* RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: Segoe UI; }
+
+/* ================== HEADER ================== */
+.topbar {
+    background: #2B6F8B;
+    color: white;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    gap: 12px;
+}
+
+.logo {
+    width: 55px;
+    height: 55px;
+}
+
+/* ================== BACKGROUND WRAPPER ================== */
+.wrapper {
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: url("../assets/beranda.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+}
+
+/* ================== HAMBURGER ================== */
+.hamburger {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #2B6F8B;
+    width: 55px;
+    height: 55px;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 1000;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    transition: 0.3s ease;
+}
+
+.hamburger.open { font-size: 0; }
+.hamburger.open::before,
+.hamburger.open::after,
+.hamburger.open span {
+    content: "";
+    width: 26px;
+    height: 3px;
+    background: white;
+    display: block;
+    margin: 4px auto;
+}
+
+/* ================== SIDEBAR ================== */
+.sidebar {
+    width: 280px;
+    background: rgba(52, 130, 160, 0.95);
+    padding: 25px 15px;
+    height: 100%;
+    backdrop-filter: blur(3px);
+    box-shadow: 3px 0 10px rgba(0,0,0,0.3);
+    transition: 0.35s ease;
+}
+
+.sidebar.hidden { transform: translateX(-100%); }
+
+.side-btn {
+    width: 100%;
+    font-size: 20px;
+    background: #6FBCE1;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 14px;
+    border: none;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+    cursor: pointer;
+}
+
+.side-btn img {
+    width: 30px;
+}
+
+/* ================== CONTENT ================== */
+.content {
+    flex: 1;
+    padding: 40px;
+}
+
+/* ================== CARDS ================== */
+.card {
+    position: relative;
+    width: 650px;
+    padding: 25px;
+    margin-bottom: 35px;
+    border-radius: 20px;
+    border: 3px solid rgba(255,255,255,0.45);
+    backdrop-filter: blur(4px);
+    color: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+.card.blue { background: rgba(0, 110, 255, 0.35); }
+.card.orange { background: rgba(255, 110, 40, 0.35); }
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.maskot {
+    margin-right: 250px;
+    width: 90px;
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+}
+
+/* BUTTONS */
+.btn-green   { background: #3CC15F; padding: 10px 25px; border: none; border-radius: 10px; color: white; }
+.btn-blue    { background: #1A73E8; padding: 10px 25px; border: none; border-radius: 10px; color: white; }
+.btn-yellow  { background: #E8C048; padding: 10px 25px; border: none; border-radius: 10px; color: white; }
+
+.title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.title-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}

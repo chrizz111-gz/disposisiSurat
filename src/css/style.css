@@ -1,224 +1,230 @@
 body {
     margin: 0;
-    font-family: Arial;
+    background: #e9e9e9;
+    font-family: Arial, sans-serif;
 }
 
-.topbar {
-    background: #2358BB;
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    font-size: 25px;
-}
-
-.logo {
-    width: 60px;
-}
-
-.background {
-    background-image: url('../assets/background.png');
-    background-size: cover;
-    background-position: center 30%;
-    filter: blur(2px);
+/* FULL LAYAR */
+.wrapper {
     width: 100%;
     height: 100vh;
-    position: absolute;
-    top: 0;
-    z-index: -1;
-}
-
-.welcome-box {
-    text-align: center;
-    margin-top: 150px;
-}
-
-.welcome-box{
-    font-size: 50px;
-    font-family: instrument-sans;
-    font-weight: bold;
-    color: #14326B;
-}
-
-.buttons-sign-in button {
-    padding: 12px 28px;
-    background: #475F97;
-    color: white;
-    border: none;
-    border-radius: 999px; /* SUPER rounded */
-    font-size: 25px;
-    cursor: pointer;
-    transition: 0.2s;
-    margin: 0 75px;
-}
-
-.buttons-sign-in button:hover {
-    background: #0f4ca7;
-    transform: translateY(-2px);
-}
-
-.login-container {
-    width: 380px;
-    padding: 40px 30px;
-    margin: 140px auto;
-    background-image: url('../assets/card.png');
-    background-size: cover;
-    background-position: center;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
-    text-align: center;
+    margin: 0;
+    background: url("../assets/bckgrnd.png") no-repeat center center; 
+    background-size: cover; /* 🔥 Gambar full */
     position: relative;
-    z-index: 1;
+    overflow: hidden;
+    border-radius: 6px;
 }
 
-.back-button {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    width: 50px;     /* bisa disesuaikan */
-    height: auto;
-    cursor: pointer;
-    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
-    transition: transform 0.2s;
-}
-
-.back-button:hover {
-    transform: scale(1.1);
-}
-
-/* MAIN LAYOUT */
-.main-wrapper {
-    display: flex;
-    padding: 25px;
-    gap: 25px;
-    margin-top: 0;
-}
-
-.menu-item {
+/* TOPBAR */
+.topbar {
+    background: #145da0;
+    color: white;
     display: flex;
     align-items: center;
     gap: 12px;
-    background: #0f2e70;
-    padding: 12px 15px;
-    border-radius: 12px;
-    font-size: 18px;
-    cursor: pointer;
-    color: white;
-    transition: 0.2s;
-}
-
-.menu-item:hover {
-    background: #13408C;
-    transform: scale(1.03);
-}
-
-.menu-title {
-    text-align: center;
-    color: white;
+    padding: 14px 25px;
     font-size: 20px;
-    font-weight: bold;
-    margin: 10px 0 -5px;
 }
 
-.icon {
-    width: 32px;
+.topbar .logo {
+    width: 50px;
+    height: 50px;
 }
 
-/* CONTENT AREA */
-.content-area {
-    width: 100%;
+/* BAGIAN KONTEN KIRI */
+.content {
+    padding: 60px;
+    max-width: 550px;
 }
 
-.surat-card {
-    width: 90%;
-    background: #082B66;
+.title {
+    font-size: 60px;
+    font-weight: 800;
+    color: #1b1b1b;
+    margin: 0; /* hapus default margin bawaan h2/h3 */
+}
+
+.title-top {
+    margin-top: -20px; /* kasih jarak kecil */
+    margin-bottom: 40px;
+    margin-left: 50px;
+}
+
+.title-bottom {
+    margin-top: -50px; /* lebih rapat lagi */
+    margin-left: 50px;
+}
+
+
+/* TOMBOL LOGIN */
+.login-btn {
+    background: #4c93d0;
     color: white;
-    padding: 25px 30px;
-    border-radius: 15px;
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 25px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    transition: 0.25s;
-}
-
-.surat-card:hover {
-    transform: scale(1.03);
-    background: #0A3A85;
-}
-
-.email-icon {
-    width: 40px;
-}
-
-/* Floating Button */
-.floating-btn {
-    position: fixed;
-    bottom: 40px;
-    right: 330px; /* ganti posisi sesuai mau di mana */
-    width: 60px;
-    height: 60px;
-    background: #007bff;
-    color: #fff;
-    font-size: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 30px;
+    padding: 14px 50px;
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
+    transition: 0.2s ease;
 
-    z-index: 9999; /* BIAR DI DEPAN SEMUA TERMASUK SIDEBAR */
+    /* 🔥 Atur posisi */
+    margin-top: 100px;     /* turun ke bawah */
+    margin-left: 50px;    /* geser ke kanan */
 }
 
 
-.floating-btn:hover {
-    background: #006eff;
-    transform: scale(1.1);
+.login-btn:hover {
+    background: #3079b8;
 }
 
-/* MENU ICON DI KANAN ATAS */
-.menu-toggle {
-    width: 35px;
-    cursor: pointer;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 1; /* BIAR KETUTUP SIDEBAR */
-}
+/* 🔥 MASKOT DIHAPUS */
+/* .maskot { ... }  → dibuang */
 
-/* SIDEBAR AWALNYA TERTUTUP */
-.sidebar {
+/* 🔥 background biru lama DIHAPUS */
+body::before {
+    content: "";
     position: fixed;
     top: 0;
-    right: -300px; /* disembunyikan */
-    width: 260px;
-    height: 100vh;
-    background: rgba(0, 60, 150, 0.95);
-    border-radius: 0 0 0 15px;
-    padding: 20px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: none; /* hilangkan background lama */
+    z-index: -1;
+}
+
+
+/* LOGIN PAGE */
+.header {
+    background-color: #2B6F8B;
+    color: white;
     display: flex;
-    flex-direction: column;
-    gap: 15px;
-    transition: 0.3s ease;
-    z-index: 9999;
+    align-items: center;
+    padding: 12px 20px;
 }
 
-/* SIDEBAR AKTIF */
-.sidebar.active {
-    right: 0;
+.header .logo {
+    width: 60.65px;      /* sesuai desain */
+    height: 60.14px;  
+    margin-right: 10px;
 }
 
-/* TOMBOL X */
-.close-sidebar {
-    width: 30px;
-    margin-left: auto;
+.login-container {
+    height: 350px;
+    width: 650px;
+    background: #69b8d7c2;
+    padding: 5px;
+    margin: 80px auto;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    text-align: center;
+
+    /* 🔥 Tengah secara vertikal & horizontal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-containers {
+    height: 500px;
+    width: 650px;
+    background: #69b8d7c2;
+    padding: 5px;
+    margin: 30px auto;
+    border-radius: 30px;
+    backdrop-filter: blur(5px);
+    text-align: center;
+
+    /* 🔥 Tengah secara vertikal & horizontal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container form {
+    width: 90%;   /* form memenuhi container */
+}
+
+.login-container h1 {
+    font-size: 36px;
+    margin-top: -10px;
+    font-weight: 700;
+}
+
+.input {
+    width: 95%;
+    padding: 14px; 
+    border: none;
+    border-radius: 30px;
+    margin-top: 18px;
+    font-size: 16px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.password-box {
+    position: relative;
+}
+
+.password-box .show {
+    position: absolute;
+    right: 35px;
+    top: 32px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.signup-text {
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.signup-text a {
+    color: #043AB9;
+    text-decoration: none;
+}
+
+.btn-login {
+    margin-top: 20px;       /* naikkan nilai ini untuk turunkan tombol */
+    padding: 15px 50px;
+    background: #4c93d0;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
     cursor: pointer;
 }
 
+.btn-login:hover {
+    background-color: #3a7ae0;
+}
 
+.page-title {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: #1b1b1b;
+}
 
+/* LOGIN PAGE BACKGROUND */
+.login-page {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url("../assets/background.png") no-repeat center center;
+    background-size: cover;
+}
+
+.login-title {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0px; /* jarak dengan container */
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.signup-text {
+    margin-top: 20px;       /* tambah jarak agar lebih turun */
+    text-align: center;
+    font-size: 14px;
+}

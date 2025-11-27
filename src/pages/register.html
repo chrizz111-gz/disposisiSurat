@@ -2,46 +2,50 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/form.css">
 </head>
-<body>
 
-    <div class="topbar">
-        <img src="../assets/logo.png" class="logo">
-        <span class="title">SMKN 2 SINGOSARI</span>
-    </div>
+<body class="login-page">
 
-    <div class="background"></div>
+    <header class="header">
+        <img src="../assets/logo.png" class="logo" alt="logo">
+        <h2>SMKN 2 SINGOSARI</h2>
+    </header>
 
-    <div class="login-container">
-        <h2>SIGN UP</h2>
+    <h2 class="login-title">SIGN UP</h2>
+    
+    <div class="login-containers">
 
-        <form class="login-form">
+        <form>
+            <input type="email" placeholder="Email" class="input">
 
-            <input type="text" id="username" placeholder="Username">
-            <input type="email"id = "email" placeholder="Email">
+            <input type="text" placeholder="Nama" class="input">
 
-            <div class="input-box">
-                <input type="password" id="password" placeholder="Password">
-                <img src="../assets/eye.png" class="toggle" onclick="togglePassword('password', this)">
+            <div class="password-box">
+                <input type="password" placeholder="Password" class="input">
+                <span class="show">👁️</span>
             </div>
 
-            <div class="input-box">
-                <input type="password" id="confirmpass" placeholder="Confirm Password">
-                <img src="../assets/eye.png" class="toggle" onclick="togglePassword('confirmpass', this)">
+            <div class="password-box">
+                <input type="password" placeholder="Confirm Password" class="input">
+                <span class="show">👁️</span>
             </div>
 
+            <select class="input" style="cursor:pointer;">
+                <option selected disabled>Pilih Jabatan</option>
+                <option>Waka Kesiswaan</option>
+                <option>Humas</option>
+                <option>BKK</option>
+                <option>Sarpras</option>
+            </select>
 
-            <button type="button" id="register">Register</button>
+            <p class="signup-text">Already have an account? <a href="login.html">Log In</a></p>
 
+            <button class="btn-login">LOG IN</button>
         </form>
-
     </div>
-
-    <img src="../assets/back.png" class="back-button" onclick="window.location.href='welcome.html'">
-    <script src="../js/register.js"></script>
 
 </body>
 </html>
