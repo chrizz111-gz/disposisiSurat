@@ -33,5 +33,20 @@
         </form>
     </div>
 
+    <script>
+    const password = document.getElementById("password");
+    const togglePw = document.getElementById("togglePw");
+
+    togglePw.addEventListener("click", () => {
+        if (password.type === "password") {
+            password.type = "text";
+            togglePw.style.backgroundImage = "url('../assets/eye-off.png')"; 
+        } else {
+            password.type = "password";
+            togglePw.style.backgroundImage = "url('../assets/eye.png')";
+        }
+    });
+</script>
+
 </body>
 </html>
