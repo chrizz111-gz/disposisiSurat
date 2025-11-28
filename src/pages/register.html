@@ -24,14 +24,16 @@
             <input type="text" placeholder="Nama" class="input">
 
             <div class="password-box">
-                <input type="password" placeholder="Password" class="input">
-                <span class="show">👁️</span>
-            </div>
+    <input type="password" placeholder="Password" class="input" id="password">
+    <span class="show" id="togglePw"></span>
+</div>
+
 
             <div class="password-box">
-                <input type="password" placeholder="Confirm Password" class="input">
-                <span class="show">👁️</span>
-            </div>
+    <input type="password" placeholder="Password" class="input" id="password">
+    <span class="show" id="togglePw"></span>
+</div>
+
 
             <select class="input" style="cursor:pointer;">
                 <option selected disabled>Pilih Jabatan</option>
@@ -46,6 +48,20 @@
             <button class="btn-login">LOG IN</button>
         </form>
     </div>
+<script>
+    const password = document.getElementById("password");
+    const togglePw = document.getElementById("togglePw");
+
+    togglePw.addEventListener("click", () => {
+        if (password.type === "password") {
+            password.type = "text";
+            togglePw.style.backgroundImage = "url('../assets/eye-off.png')"; 
+        } else {
+            password.type = "password";
+            togglePw.style.backgroundImage = "url('../assets/eye.png')";
+        }
+    });
+</script>
 
 </body>
 </html>

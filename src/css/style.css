@@ -164,15 +164,23 @@ body::before {
 
 .password-box {
     position: relative;
+    overflow: visible;
+
 }
 
 .password-box .show {
-    position: absolute;
-    right: 35px;
-    top: 32px;
+    width: 24px;
+    height: 24px;
+    background: url("../assets/eye.png") no-repeat center;
+    background-size: contain;
     cursor: pointer;
-    font-size: 18px;
+    position: absolute;
+    right: 20px;
+    top: 65%;
+    transform: translateY(-50%);
 }
+
+
 
 .signup-text {
     font-size: 14px;
@@ -228,3 +236,5 @@ body::before {
     text-align: center;
     font-size: 14px;
 }
+
+
