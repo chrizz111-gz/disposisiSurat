@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Surat Keluar</title>
+    <link rel="stylesheet" href="../css/suratkeluar.css">
+</head>
+
+<body>
+
+    <!-- ================= HAMBURGER BUTTON ================= -->
+    <button id="toggleSidebar" class="hamburger closed">III</button>
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside id="sidebar" class="sidebar hidden">
+        <button class="side-btn">HOME <img src="../assets/home.png" class="icon"></button>
+        <button class="side-btn">USER <img src="../assets/user.png" class="icon"></button>
+        <button class="side-btn">SURAT MASUK <img src="../assets/in.png" class="icon"></button>
+        <button class="side-btn">SURAT KELUAR <img src="../assets/out.png" class="icon"></button>
+        <button class="side-btn">HISTORY <img src="../assets/history.png" class="icon"></button>
+        <button class="side-btn">USER MANAGEMENT <img src="../assets/users.png" class="icon"></button>
+    </aside>
+
+    <!-- ================= TOPBAR ================= -->
+    <header class="topbar">
+        <img src="../assets/logo.png" class="logo">
+        <h2>SMKN 2 SINGOSARI</h2>
+    </header>
+
+    <!-- ================= CONTENT WRAPPER ================= -->
+<div class="wrapper">
+    <div class="container">
+        <div class="form-box">
+            <div class="form-title">SURAT KELUAR</div>
+
+            <form>
+                <label>Dari</label>
+                <input type="text" placeholder="Masukkan Pengirim Surat">
+
+                <label>Kode</label>
+                <input type="text" placeholder="Masukkan Kode Surat">
+
+                <label>No Surat</label>
+                <input type="text" placeholder="Masukkan nomor surat">
+
+                <label>Hal</label>
+                <input type="text" placeholder="Masukkan Hal Surat">
+
+                <label>Tanggal</label>
+                <input type="text" placeholder="Masukkan Tanggal pengajuan">
+            </form>
+
+            <div class="preview-box"></div>
+
+            <div class="button-row">
+                <button class="upload-btn">Upload</button>
+                <button class="submit-btn">Submit</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+    <script src="../js/sidebar.js"></script>
+</body>
+</html>

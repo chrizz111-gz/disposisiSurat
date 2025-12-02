@@ -1,0 +1,208 @@
+/* ================= GLOBAL RESET ================= */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+
+body {
+    background: url("../assets/IMG_0411.PNG") no-repeat;
+    background-size: cover;
+}
+
+/* ================= FIXED TOPBAR ================= */
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: #2B6F8B;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    gap: 12px;
+    z-index: 1000;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+}
+
+.logo {
+    width: 55px;
+    height: 55px;
+}
+
+/* ================= HAMBURGER ================= */
+.hamburger {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    background: #2B6F8B;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 1100;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    transition: .3s ease;
+}
+
+.hamburger.open { font-size: 0; }
+.hamburger.open::before,
+.hamburger.open::after,
+.hamburger.open span {
+    content: "";
+    width: 26px;
+    height: 3px;
+    background: white;
+    display: block;
+    margin: 4px auto;
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+    position: fixed;
+    top: 70px; /* muncul di bawah topbar */
+    left: 0;
+    width: 280px;
+    height: calc(100vh - 70px);
+    background: rgba(52,130,160,0.95);
+    padding: 25px 15px;
+    backdrop-filter: blur(3px);
+    box-shadow: 3px 0 10px rgba(0,0,0,0.3);
+    transition: .35s ease;
+    z-index: 900;
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%);
+}
+
+.side-btn {
+    width: 100%;
+    background: #6FBCE1;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 14px;
+    border: none;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    white-space: nowrap;
+    box-shadow: 0 4px 8px rgba(0,0,0,.25);
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.side-btn img {
+    width: 30px;
+    flex-shrink: 0;
+}
+
+/* ================= CONTENT WRAPPER ================= */
+.wrapper {
+    margin-top: 70px; /* Turun karena topbar fixed */
+    width: 100%;
+    min-height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+/* ================= FORM BOX ================= */
+.form-box {
+    position: relative;
+    width: 850px;
+    padding: 25px;
+    border-radius: 8px;
+    border: 4px solid #9a5d32;
+    box-shadow: 0 0 8px #7a4f2b;
+    background-image: url("../assets/IMG_0413.PNG");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.form-box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255,165,130,0.72);
+    z-index: 0;
+}
+
+.form-box * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ================= FORM TITLE ================= */
+.form-title {
+    background: #ff5200;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 16px;
+
+    position: absolute;
+    top: 10px;                /* dari -15px → turun ke bawah */
+    left: 85%;              /* geser sedikit ke kanan */
+    transform: translateX(-50%);
+
+    width: max-content;
+}
+
+
+/* ================= FORM ================= */
+form {
+    width: 55%;
+    float: left;
+    margin-top: 40px;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+input {
+    width: 70%;
+    padding: 12px 15px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.85);
+    font-size: 15px;
+    outline: none;
+}
+
+.preview-box {
+    width: 40%;
+    height: 280px;
+    float: right;
+    margin-top: 60px;
+    background: #ddd;
+    border-radius: 5px;
+}
+
+/* ================= BUTTONS ================= */
+.button-row {
+    clear: both;
+    padding-top: 30px;
+    text-align: right;
+}
+
+.upload-btn,
+.submit-btn {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+}
+
+.upload-btn { background: #4cd137; }
+.submit-btn { background: #0a57c7; }
