@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Profil</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/home.css"> <!-- 🔥 pakai ini -->
+    <link rel="stylesheet" href="../css/profile.css">
+</head>
+
+<body>
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+        <img src="../assets/logo.png" class="logo">
+        <h2>DISPOSISI SURAT</h2>
+    </header>
+
+    <!-- HAMBURGER -->
+    <button id="toggleSidebar" class="hamburger">☰</button>
+
+    <!-- WRAPPER -->
+    <div class="wrapper">
+
+        <!-- SIDEBAR (COPY DARI HOMEPAGE) -->
+        <aside id="sidebar" class="sidebar hidden">
+            <a href="home.html" class="side-btn">
+                BERANDA <img src="../assets/home.png">
+            </a>
+
+            <a href="profile.html" class="side-btn">
+                PENGGUNA <img src="../assets/user.png">
+            </a>
+
+            <a href="suratmasuk.html" class="side-btn">
+                SURAT MASUK <img src="../assets/in.png">
+            </a>
+
+            <a href="suratkeluar.html" class="side-btn">
+                SURAT KELUAR <img src="../assets/out.png">
+            </a>
+
+            <a href="history.html" class="side-btn">
+                RIWAYAT <img src="../assets/history.png">
+            </a>
+
+            <a href="usermanage.html" class="side-btn">
+                PERSETUJUAN AKUN <img src="../assets/users.png">
+            </a>
+        </aside>
+
+        <!-- CONTENT -->
+        <main class="content">
+
+            <div class="profile-container">
+
+                <!-- FOTO -->
+                <div class="profile-photo">
+                    <div class="photo-circle">👤</div>
+                    <button class="btn-edit">Ganti Foto</button>
+                </div>
+
+                <!-- CARD -->
+                <div class="profile-card">
+                    <h3>Informasi Profil</h3>
+
+                    <div class="form-group">
+                        <label>Nama</label>
+                        <input type="text" id="nama" value="Frncs">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="email" value="frncs@email.com">
+                    </div>
+
+                    <button class="btn-primary">Simpan Profil</button>
+
+                    <a href="gantipass.html" class="btn-link">
+                        Ganti Password
+                    </a>
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- SCRIPT SIDEBAR -->
+    <script src="../js/sidebar.js"></script>
+    <script>
+    // Ambil data dari localStorage
+    const namaInput = document.getElementById("nama");
+    const emailInput = document.getElementById("email");
+
+    // Load data kalau ada
+    if(localStorage.getItem("nama")) {
+        namaInput.value = localStorage.getItem("nama");
+    }
+
+    if(localStorage.getItem("email")) {
+        emailInput.value = localStorage.getItem("email");
+    }
+
+    // Simpan saat tombol diklik
+    document.querySelector(".btn-primary").addEventListener("click", function() {
+        localStorage.setItem("nama", namaInput.value);
+        localStorage.setItem("email", emailInput.value);
+
+        alert("Profil berhasil disimpan!");
+    });
+</script>
+
+</body>
+</html>

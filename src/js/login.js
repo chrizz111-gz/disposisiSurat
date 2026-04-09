@@ -1,24 +1,38 @@
-function togglePassword(id, icon) {
-    const input = document.getElementById(id);
+// Elemen
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+const btnLogin = document.getElementById("btnLogin");
+const togglePw = document.getElementById("togglePw");
 
-       if (input.type === "password") {
-        input.type = "text";
-        icon.src = "../assets/eye-off.png"; // ikon ketika password terlihat
+// Fitur show/hide password
+togglePw.addEventListener("click", () => {
+    if (password.type === "password") {
+        password.type = "text";
+        togglePw.style.backgroundImage = "url('../assets/eye-off.png')";
     } else {
-        input.type = "password";
-        icon.src = "../assets/eye.png"; // ikon ketika password disembunyikan
+        password.type = "password";
+        togglePw.style.backgroundImage = "url('../assets/eye.png')";
     }
-}
-document.getElementById("btnLogin").onclick = function () {
+});
 
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value.trim();
+// Validasi input sebelum pindah halaman
+btnLogin.addEventListener("click", () => {
+    const emailValue = email.value.trim();
+    const passwordValue = password.value.trim();
 
-    if (email === "" || password === "") {
+    // Validasi email dan password tidak kosong
+    if (emailValue === "" || passwordValue === "") {
         alert("Tolong isi email dan password terlebih dahulu.");
-        return; // stop supaya tidak pindah halaman
-        }
+        return; // Stop → tidak berpindah halaman
+    }
 
-    // Jika tidak kosong → pindah halaman
+    // Validasi format email harus mengandung '@gmail.com'
+    const emailRegex = /^[a-zA-Z0-9._-]+@gmail\.com$/;
+    if (!emailRegex.test(emailValue)) {
+        alert("Email harus berformat 'example@gmail.com'.");
+        return; // Stop → tidak berpindah halaman
+    }
+
+    // Jika semua valid → pindah halaman
     window.location.href = "home.html";
-};
+}); 

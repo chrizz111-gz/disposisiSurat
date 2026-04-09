@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Surat SMKN 2 Singosari</title>
+<link rel="stylesheet" href="../css/history.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="logo-container">
+        <img src="Logo_SMKN_2_Singosari (1).png" class="logo" alt="logo">
+        <span class="title">SMKN 2 SINGOSARI</span>
+    </div>
+
+    <div class="filter-container">
+        <select id="filter">
+            <option>Semua</option>
+            <option>Disetujui</option>
+            <option>Ditolak</option>
+        </select>
+    </div>
+</header>
+
+<div class="content">
+
+    <!-- SURAT MASUK -->
+    <div class="card masuk">
+        <div class="card-header">
+            <span class="date">12 Okt 2025</span>
+            <span class="label"><span class="icon">✉</span> SURAT MASUK</span>
+        </div>
+
+        <div class="info">
+            <p class="small-text">Nomor Surat: </p>
+            <p class="small-text">Asal: </p>
+            <p class="small-text">Perihal: </p>
+        </div>
+
+        <div class="card-footer">
+            <div class="footer-left">
+                <button class="btn-accept">Terima</button>
+            </div>
+
+            <img src="maskot biru.png" class="maskot">
+
+            <div class="footer-right">
+                <button class="btn-view">Lihat</button>
+                <button class="btn-delete">🗑</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SURAT KELUAR -->
+    <div class="card keluar">
+        <div class="card-header">
+            <span class="date">12 Okt 2025</span>
+            <span class="label"><span class="icon">📤</span> SURAT KELUAR</span>
+        </div>
+
+        <div class="info">
+            <p class="small-text">Dari: </p>
+            <p class="small-text">Kode: </p>
+            <p class="small-text">Nomor Surat: </p>
+            <p class="small-text">Perihal: </p>
+        </div>
+
+        <div class="card-footer">
+            <div class="footer-left">
+                <button class="btn-reject">Tolak</button>
+            </div>
+
+            <img src="maskot oren.png" class="maskot">
+
+            <div class="footer-right">
+                <button class="btn-view">Lihat</button>
+                <button class="btn-delete">🗑</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="sidebar">
+    <div class="menu-btn">☰</div>
+</div>
+
+</body>
+</html>

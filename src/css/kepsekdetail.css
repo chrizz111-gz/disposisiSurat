@@ -1,0 +1,130 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  background: url('../assets/verticalbcg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Tambahan ini untuk center seluruh isi */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* WRAPPER PUSAT */
+.wrapper {
+  width: 100%;
+  max-width: 450px;
+  padding: 90px;
+
+  background: rgba(255, 132, 0, 0.616);
+  border-radius: 14px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* ================= HEADER ================= */
+.header-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+
+.icon-header {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 120, 0, 0.9);
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 22px;
+  color: white;
+}
+
+/* ================= SUB HEADER ================= */
+.sub-header {
+  background: #1a3d70;
+  padding: 10px;
+  margin: 0 auto 25px auto;
+  width: 85%;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+/* Label */
+.label {
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 5px;
+  margin-left: 10px;
+}
+
+/* BOX AREA */
+.box-area {
+  width: 75%;
+  height: 400px;
+  background: rgba(250,130,70,0.55);
+  border-radius: 10px;
+  margin: 0 auto 30px auto;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+/* BOX NOTE */
+.box-note {
+  width: 90%;
+  height: 120px;
+  background: rgba(250,130,70,0.55);
+  border-radius: 10px;
+  margin: 0 auto 35px auto;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+/* BUTTONS */
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 40px;
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.accepted { background: #2ecc71; }
+.declined { background: #e74c3c; }
+
+button:hover { opacity: 0.85; }
+
+/* CARD TAMBAHAN DI TENGAH */
+.card-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.card {
+  width: 420px;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+}

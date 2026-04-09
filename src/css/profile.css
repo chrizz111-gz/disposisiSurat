@@ -1,0 +1,185 @@
+/* ================== WRAPPER ================== */
+.wrapper {
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    background: url("../assets/beranda.png") center / cover no-repeat;
+    display: flex;
+}
+
+/* ================== HAMBURGER ================== */
+.hamburger {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 55px;
+    height: 55px;
+    border: none;
+    border-radius: 10px;
+    background: #2B6F8B;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 1000;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    transition: 0.3s ease;
+}
+
+/* ================== SIDEBAR ================== */
+.sidebar {
+    position: fixed;
+    top: 80px;                      /* 🔥 tinggi topbar */
+    left: 0;
+
+    width: 280px;
+    height: calc(100vh - 80px);     /* 🔥 full sampai bawah */
+
+    background: rgba(52, 130, 160, 0.95);
+    padding: 25px 15px;
+
+    backdrop-filter: blur(3px);
+    box-shadow: 3px 0 10px rgba(0,0,0,0.3);
+
+    transform: translateX(-100%);
+    transition: transform 0.35s ease;
+    z-index: 999;
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%);
+}
+
+.sidebar:not(.hidden) {
+    transform: translateX(0);
+}
+
+
+/* Sidebar Button */
+.side-btn {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 14px;
+    background: #6FBCE1;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    white-space: nowrap;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.side-btn img {
+    width: 30px;
+    flex-shrink: 0;
+}
+.profile-container {
+    width: 95%;
+    max-width: 600px; /* 🔥 lebih gede dari login */
+    margin: 40px auto;
+    padding: 40px 35px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    background: rgba(70, 150, 180, 0.45);
+    backdrop-filter: blur(10px);
+
+    border-radius: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* FOTO */
+.profile-photo {
+    text-align: center;
+}
+
+.photo-circle {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.2); /* 🔥 transparan */
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    margin: auto;
+
+    border: 2px solid rgba(255,255,255,0.5);
+}
+.btn-edit {
+    margin-top: 12px;
+    padding: 8px 16px;
+    border: none;
+    background: #2f6fa1; /* 🔥 sama input login */
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+/* CARD */
+.profile-card {
+    background: transparent; /* 🔥 hapus putih */
+    padding: 0;
+    box-shadow: none;
+}
+
+.profile-card h3 {
+    text-align: center;
+    color: white;
+    margin-bottom: 15px;
+}
+
+/* FORM */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-size: 13px;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-top: 5px;
+}
+
+/* BUTTON */
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #5aa6d9; /* 🔥 sama login */
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+/* LINK KE HALAMAN PASSWORD */
+.btn-link {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn-link:hover {
+    text-decoration: underline;
+}

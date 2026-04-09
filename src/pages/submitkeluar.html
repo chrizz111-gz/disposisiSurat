@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Konfirmasi Surat</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/submitkeluar.css">
+</head>
+
+<body>
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+        <img src="../assets/logo.png" class="logo">
+        <h2>DISPOSISI SURAT</h2>
+    </header>
+
+    <!-- CONTENT -->
+    <div class="wrapper">
+        <div class="confirm-box">
+            <h2>
+                Surat Telah Dikirim! <br>
+                Menunggu Konfirmasi
+            </h2>
+
+            <button class="btn-kembali" onclick="kembali()">
+                Kembali
+            </button>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script>
+        function kembali() {
+            window.location.href = "home.html";
+        }
+    </script>
+
+</body>
+</html>

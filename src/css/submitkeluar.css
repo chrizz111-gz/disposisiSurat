@@ -1,0 +1,77 @@
+/* ================= BACKGROUND FULL ================= */
+body {
+    margin: 0;
+    font-family: Segoe UI, Arial, sans-serif;
+
+    background: url("../assets/IMG_0411.PNG") no-repeat center center;
+    background-size: cover;   /* 🔥 biar full layar */
+    background-attachment: fixed; /* optional biar keren (parallax dikit) */
+}
+
+/* Biar semua konten di atas overlay */
+body > * {
+    position: relative;
+    z-index: 1;
+}
+
+html, body {
+    height: 100%;
+}
+/* ================= WRAPPER ================= */
+.wrapper {
+    height: calc(100vh - 80px); /* tinggi topbar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ================= BOX ================= */
+.confirm-box {
+    width: 500px;
+    padding: 30px;
+    border-radius: 20px;
+
+    background: rgba(255, 165, 130, 0.6); /* 🔥 ORANGE */
+    border: 3px solid rgba(154, 93, 50, 0.6);
+
+    backdrop-filter: blur(8px);
+    text-align: center;
+
+    box-shadow: 0 8px 20px rgba(122, 79, 43, 0.5);
+}
+
+.confirm-box h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+/* ================= BUTTON ================= */
+.btn-kembali {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+
+    background: linear-gradient(145deg, #ff7a18, #ff5200);
+    color: white;
+
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-kembali:hover {
+    background: linear-gradient(145deg, #ff8c2a, #ff5200);
+}
+
+.form-box {
+    background-image: url("../assets/IMG_0410.PNG");
+    background-size: cover;
+    background-position: center;
+}
+
+.form-box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 165, 130, 0.72);
+}

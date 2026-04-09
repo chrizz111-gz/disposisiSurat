@@ -12,6 +12,6 @@ btn.addEventListener("click", () => {
     } else {
         btn.classList.remove("closed");
         btn.classList.add("open");
-        btn.innerHTML = "<span></span>";
+        btn.innerHTML = "<span>☰</span>";
     }
 });

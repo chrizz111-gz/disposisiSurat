@@ -1,0 +1,98 @@
+/* BACKGROUND */
+.login-page {
+    min-height: 100vh;
+    padding-top: 100px; /* 🔥 WAJIB biar ga ketiban topbar */
+    background: url("../assets/background.png") center / cover no-repeat;
+}
+
+/* JUDUL */
+.login-title {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 800;
+    margin: 20px 0 10px;
+}
+
+/* CONTAINER */
+.login-container {
+    width: 90%;
+    max-width: 600px; /* 🔥 biar ga kegedean */
+    margin: 20px auto;
+    padding: 35px 25px;
+    border-radius: 25px;
+
+    background: rgba(70, 150, 180, 0.45);
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* FORM */
+.login-container form {
+    width: 100%;
+}
+
+/* INPUT */
+.input {
+    width: 100%;
+    padding: 14px 18px; /* 🔥 lebih kecil */
+    border-radius: 40px;
+    border: none;
+    margin-top: 16px;
+    font-size: 15px;
+    outline: none;
+
+    background: #2f6fa1;
+    color: white;
+}
+
+.input::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+
+/* PASSWORD */
+.password-box {
+    position: relative;
+}
+
+.password-box .show {
+    width: 20px;
+    height: 20px;
+    background: url("../assets/eye.png") center / contain no-repeat;
+    position: absolute;
+    right: 18px;
+    top: 55%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+/* TEXT */
+.signup-text {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.signup-text a {
+    color: #0d47ff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* BUTTON */
+.btn-login {
+    display: block;
+    margin: 30px auto 0;
+    padding: 12px 40px; /* 🔥 lebih kecil */
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    background: #5aa6d9;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+
+.btn-login:hover {
+    background: #3f8cc4;
+}

@@ -1,0 +1,56 @@
+/* BODY = BACKGROUND UTAMA */
+body {
+    min-height: 100vh;
+
+    /* 🔥 BACKGROUND LAYER */
+    background:
+        url("../assets/bckgrnd.png") center / cover no-repeat,
+        #8ec1d3;
+
+    overflow: hidden;
+}
+
+
+/* MAIN */
+.main {
+    height: calc(100vh - 80px);
+    display: flex;
+    align-items: top;
+    padding-top: 70px;
+}
+
+/* KONTEN KIRI */
+.content {
+    padding-left: 80px;
+}
+
+.title {
+    font-size: 64px;
+    font-weight: 800;
+    color: #111;
+}
+
+.title-top {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.title-bottom {
+    margin-bottom: 40px;
+}
+
+/* BUTTON */
+.login-btn {
+    background: #5aa6d9;
+    color: white;
+    font-size: 30px;
+    padding: 18px 70px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 40px;
+}
+
+.login-btn:hover {
+    background: #3f8cc4;
+}

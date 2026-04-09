@@ -1,0 +1,155 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+
+    background-image: 
+        url("../assets/IMG_0410.PNG"),   /* layer atas */
+        url("../assets/IMG_0411.PNG");       /* layer bawah */
+
+    background-repeat: no-repeat, no-repeat;
+    background-position: center center, center center;
+    background-size: 40%, cover;
+}
+/* Container */
+.container-detail {
+    width: 90%;
+    margin: 40px auto;
+}
+
+/* Title */
+.title {
+    text-align: center; 
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-size: 40px;
+    color: #388bae;
+}
+
+/* Wrapper 2 kolom */
+.detail-wrapper {
+    display: flex;
+    gap: 30px;
+}
+
+/* Panel */
+.left-panel,
+.right-panel {
+    flex: 1;
+}
+
+/* Card */
+.card {
+    background-color: rgba(49, 122, 182, 0.814);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    color: white; /* biar teks kontras */
+}
+
+/* Form */
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #444;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+/* Button */
+.button-group {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn-accept {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-reject {
+    background: #E53935;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-accept:hover {
+    background: #43a047;
+}
+
+.btn-reject:hover {
+    background: #d32f2f;
+}
+
+/* ===== PREVIEW SURAT ===== */
+.surat-preview {
+    margin-bottom: 25px;
+}
+
+.surat-item {
+    margin-top: 15px;
+}
+
+.item-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.item-row .label {
+    font-weight: 600;
+    color: #e0f3ff;
+}
+
+.item-row .value {
+    text-align: right;
+    max-width: 60%;
+}
+
+.lampiran-box {
+    margin-top: 20px;
+    height: 200px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.lampiran-box:hover {
+    background: rgba(255,255,255,0.25);
+}

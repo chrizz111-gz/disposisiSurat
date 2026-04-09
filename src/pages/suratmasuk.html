@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Surat Keluar</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/suratmasuk.css">
+</head>
+
+<body>
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+        <img src="../assets/logo.png" class="logo">
+        <h2>DISPOSISI SURAT</h2>
+    </header>
+
+    <!-- HAMBURGER -->
+    <button id="toggleSidebar" class="hamburger">☰</button>
+
+    <!-- WRAPPER -->
+    <div class="wrapper">
+
+        <!-- SIDEBAR -->
+        <aside id="sidebar" class="sidebar hidden">
+            <a href="home.html" class="side-btn">
+                BERANDA <img src="../assets/home.png" alt="">
+            </a>
+
+            <a href="profile.html" class="side-btn">
+                PENGGUNA <img src="../assets/user.png" alt="">
+            </a>
+
+            <a href="suratmasuk.html" class="side-btn">
+                SURAT MASUK <img src="../assets/in.png" alt="">
+            </a>
+
+            <a href="suratkeluar.html" class="side-btn">
+                SURAT KELUAR <img src="../assets/out.png" alt="">
+            </a>
+
+            <a href="history.html" class="side-btn">
+                RIWAYAT <img src="../assets/history.png" alt="">
+            </a>
+
+            <a href="usermanage.html" class="side-btn">
+                PERSETUJUAN AKUN <img src="../assets/users.png" alt="">
+            </a>
+        </aside>
+
+        <!-- CONTENT -->
+        <main class="content">
+
+            <div class="form-box">
+                <div class="form-title">SURAT MASUK</div>
+
+                <form>
+                    <label>Dari</label>
+                    <input type="text" placeholder="Masukkan Pengirim Surat">
+
+                    <label>Kode</label>
+                   <input type="text" placeholder="Masukkan Kode Surat">
+
+                    <label>No Surat</label>
+                    <input type="text" placeholder="Masukkan Nomor Surat">
+
+                    <label>Hal</label>
+                    <input type="text" placeholder="Masukkan Perihal Surat">
+
+                    <label>Tanggal</label>
+                    <input type="text" placeholder="Masukkan Tanggal Surat">
+                </form>
+
+                <div class="preview-box"></div>
+
+                <div class="button-row">
+                    <button type="button" class="upload-btn">Upload</button>
+                    <a href="submitmasuk.html"> <button class="submit-btn">Submit</button></a>
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script src="../js/sidebar.js"></script>
+</body>
+</html>

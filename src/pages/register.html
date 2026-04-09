@@ -3,64 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Daftar</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/register.css">
 </head>
 
 <body class="login-page">
 
-    <header class="header">
+    <header class="topbar">
         <img src="../assets/logo.png" class="logo" alt="logo">
-        <h2>SMKN 2 SINGOSARI</h2>
+        <h2>DISPOSISI SURAT</h2>
     </header>
 
-    <h2 class="login-title">SIGN UP</h2>
+    <h2 class="login-title">DAFTAR</h2>
     
     <div class="login-containers">
 
-        <form>
-            <input type="email" placeholder="Email" class="input">
+<form>
+    <input type="text" id="username" class="input" placeholder="Nama">
 
-            <input type="text" placeholder="Nama" class="input">
+    <input type="email" id="email" class="input" placeholder="Email">
 
-            <div class="password-box">
-    <input type="password" placeholder="Password" class="input" id="password">
-    <span class="show" id="togglePw"></span>
-</div>
-
-
-            <div class="password-box">
-    <input type="password" placeholder="Password" class="input" id="password">
-    <span class="show" id="togglePw"></span>
-</div>
-
-
-            <select class="input" style="cursor:pointer;">
-                <option selected disabled>Pilih Jabatan</option>
-                <option>Tata Usaha</option>
-                <option>Kepala Sekolah</option>
-                <option>Lainnya...</option>
-            </select>
-
-            <p class="signup-text">Already have an account? <a href="login.html">Log In</a></p>
-
-            <button class="btn-login">Register</button>
-        </form>
+    <div class="password-box">
+        <input type="password" id="password" class="input" placeholder="Password">
+        <img src="../assets/eye.png" class="show" onclick="togglePassword('password', this)">
     </div>
-<script>
-    const password = document.getElementById("password");
-    const togglePw = document.getElementById("togglePw");
 
-    togglePw.addEventListener("click", () => {
-        if (password.type === "password") {
-            password.type = "text";
-            togglePw.style.backgroundImage = "url('../assets/eye-off.png')"; 
-        } else {
-            password.type = "password";
-            togglePw.style.backgroundImage = "url('../assets/eye.png')";
-        }
-    });
-</script>
+    <div class="password-box">
+        <input type="password" id="confirmpass" class="input" placeholder="Confirm Password">
+        <img src="../assets/eye.png" class="show" onclick="togglePassword('confirmpass', this)">
+    </div>
+
+    <select id="jabatan" class="input" style="cursor:pointer;">
+        <option selected disabled value="">Pilih Jabatan</option>
+        <option value="Kepala Sekolah">Kepala Sekolah</option>        
+        <option value="Tata Usaha">Tata Usaha</option>
+        <option value="Waka Kurikulum">Waka Kurikulum</option>
+        <option value="Waka Kesiswaan">Waka Kesiswaan</option>
+        <option value="Waka Humas">Waka Humas</option>
+        <option value="Waka Sarpras">Waka Sarpras</option>
+        <option value="Kepala Program">Kepala Program</option>
+        <option value="BK">BK</option>
+        <option value="BKK">BKK</option>
+    </select>
+
+    <p class="signup-text">Sudah Punya Akun? <a href="login.html">Masuk</a></p>
+
+    <button type="button" id="register" class="btn-login">Daftar</button>
+</form>
+
+</div>
+
+<script src="../js/register.js"></script>
 
 </body>
 </html>

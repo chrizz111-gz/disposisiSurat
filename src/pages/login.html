@@ -5,48 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 
 <body class="login-page">
 
-    <header class="header">
-        <img src="../assets/logo.png" class="logo" alt="logo">
-        <h2>SMKN 2 SINGOSARI</h2>
+   <header class="topbar">
+        <img src="../assets/logo.png" class="logo" alt="Logo">
+        <h2>DISPOSISI SURAT</h2>
     </header>
 
-    <h2 class="login-title">LOGIN</h2>
+    <h2 class="login-title">MASUK</h2>
     
     <div class="login-container">
 
         <form>
-            <input type="email" placeholder="Email" class="input">
+            <input type="email" id="email" placeholder="Email" class="input">
+
             <div class="password-box">
-    <input type="password" placeholder="Password" class="input" id="password">
-    <span class="show" id="togglePw"></span>
-</div>
+                <input type="password" placeholder="Password" class="input" id="password">
+                <span class="show" id="togglePw"></span>
+            </div>
 
+            <p class="signup-text">Kamu Belum Punya Akun? <a href="register.html">Daftar</a></p>
 
-            <p class="signup-text">You don't have an account? <a href="register.html">Sign Up</a></p>
-
-            <button type="button" class="btn-login" onclick="location.href='home.html'">LOG IN</button>
-
+            <button type="button" class="btn-login" id="btnLogin">Masuk</button>
         </form>
     </div>
 
-    <script>
-    const password = document.getElementById("password");
-    const togglePw = document.getElementById("togglePw");
-
-    togglePw.addEventListener("click", () => {
-        if (password.type === "password") {
-            password.type = "text";
-            togglePw.style.backgroundImage = "url('../assets/eye-off.png')"; 
-        } else {
-            password.type = "password";
-            togglePw.style.backgroundImage = "url('../assets/eye.png')";
-        }
-    });
-</script>
+    <!-- Hubungkan file JS eksternal -->
+    
 
 </body>
 </html>

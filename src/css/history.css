@@ -1,0 +1,174 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+
+    /* Background gambar + Ombre vertikal */
+    background: 
+        linear-gradient(to bottom, rgba(179, 176, 176, 0.70), rgba(12, 135, 216, 0.50)),
+        url("../assets/IMG_0411.PNG") no-repeat center center fixed;
+
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #0b4a6f;
+    height: 70px;
+    padding: 0 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+}
+
+.title {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.filter-container select {
+    padding: 8px;
+    border-radius: 5px;
+}
+
+/* CONTENT */
+.content {
+    padding: 30px;
+}
+
+/* CARD */
+.card {
+    width: 40%;
+    margin: 25px auto;
+    border-radius: 10px;
+    padding: 18px 18px 0 18px;
+    position: relative;
+    min-height: 145px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Warna card */
+.masuk {
+    background: #88c2f7;
+    border: 4px solid #215f8b;
+}
+
+.keluar {
+    background: #e7a793;
+    border: 4px solid #b65c3a;
+}
+
+/* HEADER DALAM CARD */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.card-header .date {
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+}
+
+.label {
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+}
+
+.icon {
+    margin-right: 4px;
+}
+
+/* INFO */
+.info {
+    margin-top: 10px;
+}
+
+.info .small-text {
+    font-size: 13px;
+    margin: 3px 0;
+    color: white;
+}
+
+/* FOOTER */
+.card-footer {
+    margin-top: auto;
+    padding-top: 5px;
+    padding-bottom: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+/* Maskot menempel tepat di garis bawah */
+.card-footer .maskot {
+    width: 60px;
+    margin: 0;
+    align-self: center;
+}
+
+/* Tombol ada sedikit jarak dari bawah */
+.footer-left button,
+.footer-right button {
+    margin-bottom: 3px;
+    padding: 7px 14px;
+    font-size: 12px;
+}
+
+/* Tombol warna */
+.btn-accept {
+    background: #35b839;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+.btn-reject {
+    background: #da0b04;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+.btn-view {
+    background: #1b8ad9;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+.btn-delete {
+    background: red;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+/* SIDEBAR */
+.sidebar {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
+
+.menu-btn {
+    font-size: 32px;
+    background: #073b5c;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
