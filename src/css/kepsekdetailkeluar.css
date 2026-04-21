@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+
+    background-image: 
+        url("../assets/IMG_0413.PNG"),
+        url("../assets/IMG_0411.PNG");
+
+    background-repeat: no-repeat, no-repeat;
+    background-position: center center, center center;
+    background-size: 40%, cover;
+}
+
+/* Container */
+.container-detail {
+    width: 90%;
+    margin: 40px auto;
+}
+
+/* Title */
+.title {
+    text-align: center;
+    margin-top: 90px;
+    margin-bottom: 30px;
+    font-size: 36px;
+    font-weight: bold;
+    color: #e67e22;
+}
+
+/* Layout */
+.detail-wrapper {
+    display: flex;
+    gap: 30px;
+}
+
+.left-panel,
+.right-panel {
+    flex: 1;
+}
+
+/* CARD ORANGE */
+.card {
+    background: rgba(230, 126, 34, 0.75);
+    padding: 25px;
+    border-radius: 14px;
+    color: white;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Preview */
+.surat-preview {
+    margin-bottom: 25px;
+}
+
+.item-row {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.label {
+    font-weight: 600;
+    color: #ffe7d1;
+}
+
+/* Lampiran */
+.lampiran-box {
+    margin-top: 20px;
+    height: 200px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.lampiran-box:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+/* Form */
+.form-group {
+    margin-bottom: 18px;
+}
+
+textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+/* BUTTON GROUP */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* LEFT BUTTONS */
+.left-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+/* BUTTON STYLE */
+.btn-accept {
+    background: #2ecc71;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-reject {
+    background: #e74c3c;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+/* BUTTON KEMBALI */
+.btn-kembali {
+    background: linear-gradient(145deg, #bfc3c7, #8f959b);
+    color: #2c2c2c;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+.btn-kembali:hover {
+    transform: translateY(-1px);
+}

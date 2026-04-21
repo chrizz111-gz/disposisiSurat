@@ -1,6 +1,121 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Segoe UI, Arial, sans-serif;
+}
+
+/* BACKGROUND */
 body {
-    background: url("../assets/IMG_0411.PNG") no-repeat;
+    background: url("../assets/IMG_0411.PNG") no-repeat center;
     background-size: cover;
+    min-height: 100vh;
+}
+
+/* CONTAINER */
+.approval-container {
+    padding: 40px;
+}
+
+/* TITLE */
+.page-title {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    margin-top: 70px;
+    margin-bottom: 30px;
+    color: #2d2d2d;
+}
+
+/* LIST */
+.approval-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* CARD */
+.approval-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 25px;
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    transition: 0.25s ease;
+}
+
+.approval-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.2);
+}
+
+/* USER */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #dfe6e9, #b2bec3);
+}
+
+/* TEXT */
+.name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2d2d2d;
+}
+
+.role {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+/* ACTION */
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* BUTTON ACCEPT */
+.btn-accept {
+    background: #2ecc71;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.btn-accept:hover {
+    background: #27ae60;
+}
+
+/* BUTTON REJECT */
+.btn-reject {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.btn-reject:hover {
+    background: #c0392b;
 }
 
 /* ================= HAMBURGER ================= */
@@ -110,109 +225,3 @@ body {
     width: 30px;
     flex-shrink: 0;
 }
-/* ================= CONTENT WRAPPER ================= */
-.wrapper {
-    margin-top: 70px; /* Turun karena topbar fixed */
-    width: 100%;
-    min-height: calc(100vh - 70px);
-    display: flex;
-    justify-content: center;
-    padding: 40px;
-}
-
-/* ================= FORM BOX ================= */
-.form-box {
-    position: relative;
-    width: 850px;
-    padding: 25px;
-    border-radius: 8px;
-    border: 4px solid #9a5d32;
-    box-shadow: 0 0 8px #7a4f2b;
-    background-image: url("../assets/IMG_0413.PNG");
-    background-size: cover;
-    background-position: center;
-    overflow: hidden;
-}
-
-.form-box::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(255,165,130,0.72);
-    z-index: 0;
-}
-
-.form-box * {
-    position: relative;
-    z-index: 1;
-}
-
-/* ================= FORM TITLE ================= */
-.form-title {
-    background: #ff5200;
-    color: white;
-    padding: 10px 25px;
-    border-radius: 6px;
-    font-weight: bold;
-    font-size: 16px;
-
-    position: absolute;
-    top: 10px;                /* dari -15px → turun ke bawah */
-    left: 85%;              /* geser sedikit ke kanan */
-    transform: translateX(-50%);
-
-    width: max-content;
-}
-
-
-/* ================= FORM ================= */
-form {
-    width: 55%;
-    float: left;
-    margin-top: 40px;
-}
-
-label {
-    font-weight: bold;
-    margin-top: 10px;
-    display: block;
-}
-
-input {
-    width: 70%;
-    padding: 12px 15px;
-    border: 2px solid white;
-    border-radius: 10px;
-    background: rgba(255,255,255,0.85);
-    font-size: 15px;
-    outline: none;
-}
-
-.preview-box {
-    width: 40%;
-    height: 280px;
-    float: right;
-    margin-top: 60px;
-    background: #ddd;
-    border-radius: 5px;
-}
-
-/* ================= BUTTONS ================= */
-.button-row {
-    clear: both;
-    padding-top: 30px;
-    text-align: right;
-}
-
-.upload-btn,
-.submit-btn {
-    padding: 10px 25px;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    color: white;
-    cursor: pointer;
-}
-
-.upload-btn { background: #4cd137; }
-.submit-btn { background: #0a57c7; }

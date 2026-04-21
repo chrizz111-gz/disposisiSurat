@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Surat Keluar</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/kepsekdetailkeluar.css">
+</head>
+<body>
+
+<header class="topbar">
+    <img src="../assets/logo.png" class="logo">
+    <h2>DISPOSISI SURAT</h2>
+</header>
+
+<div class="container-detail">
+
+    <h2 class="title">DETAIL SURAT KELUAR</h2>
+
+    <div class="detail-wrapper">
+
+        <!-- KIRI -->
+        <div class="left-panel">
+            <div class="card surat-preview">
+                <h3>Surat Keluar</h3>
+
+                <div class="surat-item">
+                    <div class="item-row"><span class="label">Nomor Surat</span></div>
+                    <div class="item-row"><span class="label">Tanggal</span></div>
+                    <div class="item-row"><span class="label">Tujuan</span></div>
+                    <div class="item-row"><span class="label">Perihal</span></div>
+                </div>
+
+                <div class="lampiran-box">
+                    <p>Lihat Lampiran (PDF)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- KANAN -->
+        <div class="right-panel">
+            <div class="card">
+                <h3>Catatan</h3>
+
+                <div class="form-group">
+                    <label>Catatan</label>
+                    <textarea placeholder="Tulis catatan di sini..."></textarea>
+                </div>
+
+                <div class="button-group">
+                    <div class="left-buttons">
+                        <button class="btn-accept">Diterima</button>
+                        <button class="btn-reject">Ditolak</button>
+                    </div>
+
+                    <button class="btn-kembali" onclick="window.location.href='home.html'">
+                        ← Kembali
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

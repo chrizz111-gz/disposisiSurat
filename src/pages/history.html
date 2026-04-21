@@ -4,89 +4,111 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dashboard Surat SMKN 2 Singosari</title>
+<link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/history.css">
 </head>
 
 <body>
 
 <!-- HEADER -->
-<header class="header">
-    <div class="logo-container">
-        <img src="Logo_SMKN_2_Singosari (1).png" class="logo" alt="logo">
-        <span class="title">SMKN 2 SINGOSARI</span>
+<header class="topbar">
+        <img src="../assets/logo.png" class="logo">
+        <h2>DISPOSISI SURAT</h2>
+    </header>
+
+    <div class="history-container">
+
+    <!-- HEADER -->
+    <div class="history-header">
+        <div class="tabs">
+            <button class="tab active">📥 Surat Masuk</button>
+            <button class="tab">📤 Surat Keluar</button>
+        </div>
+
+         <!-- ================= HAMBURGER ================= -->
+    <button id="toggleSidebar" class="hamburger" aria-label="Toggle Sidebar">
+        ☰
+    </button>
+
+        <aside id="sidebar" class="sidebar hidden">
+            <a href="home.html" class="side-btn">
+                BERANDA <img src="../assets/home.png" alt="">
+            </a>
+
+            <a href="profile.html" class="side-btn">
+                PENGGUNA <img src="../assets/user.png" alt="">
+            </a>
+
+            <a href="suratmasuk.html" class="side-btn">
+                SURAT MASUK <img src="../assets/in.png" alt="">
+            </a>
+
+            <a href="suratkeluar.html" class="side-btn">
+                SURAT KELUAR <img src="../assets/out.png" alt="">
+            </a>
+
+            <a href="history.html" class="side-btn">
+                RIWAYAT <img src="../assets/history.png" alt="">
+            </a>
+
+            <a href="usermanage.html" class="side-btn">
+                PERSETUJUAN AKUN <img src="../assets/users.png" alt="">
+            </a>
+        </aside>
+
+        <div class="tools">
+            <input type="text" placeholder="Cari surat..." class="search">
+            <select class="filter">
+                <option>Semua</option>
+                <option>Disetujui</option>
+                <option>Ditolak</option>
+            </select>
+        </div>
     </div>
 
-    <div class="filter-container">
-        <select id="filter">
-            <option>Semua</option>
-            <option>Disetujui</option>
-            <option>Ditolak</option>
-        </select>
-    </div>
-</header>
+    <!-- TABLE -->
+    <div class="table-card">
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Tanggal</th>
+                    <th>Waktu</th>
+                    <th>Nomor</th>
+                    <th>Asal</th>
+                    <th>Perihal</th>
+                    <th>Status</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
 
-<div class="content">
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>12 Okt 2025</td>
+                    <td>12.27</td>
+                    <td>001/A</td>
+                    <td>Sekolah</td>
+                    <td>Undangan</td>
+                    <td><span class="status ok">Disetujui</span></td>
+                    <td><button class="btn-view">Lihat</button></td>
+                </tr>
 
-    <!-- SURAT MASUK -->
-    <div class="card masuk">
-        <div class="card-header">
-            <span class="date">12 Okt 2025</span>
-            <span class="label"><span class="icon">✉</span> SURAT MASUK</span>
-        </div>
-
-        <div class="info">
-            <p class="small-text">Nomor Surat: </p>
-            <p class="small-text">Asal: </p>
-            <p class="small-text">Perihal: </p>
-        </div>
-
-        <div class="card-footer">
-            <div class="footer-left">
-                <button class="btn-accept">Terima</button>
-            </div>
-
-            <img src="maskot biru.png" class="maskot">
-
-            <div class="footer-right">
-                <button class="btn-view">Lihat</button>
-                <button class="btn-delete">🗑</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- SURAT KELUAR -->
-    <div class="card keluar">
-        <div class="card-header">
-            <span class="date">12 Okt 2025</span>
-            <span class="label"><span class="icon">📤</span> SURAT KELUAR</span>
-        </div>
-
-        <div class="info">
-            <p class="small-text">Dari: </p>
-            <p class="small-text">Kode: </p>
-            <p class="small-text">Nomor Surat: </p>
-            <p class="small-text">Perihal: </p>
-        </div>
-
-        <div class="card-footer">
-            <div class="footer-left">
-                <button class="btn-reject">Tolak</button>
-            </div>
-
-            <img src="maskot oren.png" class="maskot">
-
-            <div class="footer-right">
-                <button class="btn-view">Lihat</button>
-                <button class="btn-delete">🗑</button>
-            </div>
-        </div>
+                <tr>
+                    <td>2</td>
+                    <td>12 Okt 2025</td>
+                    <td>12.36</td>
+                    <td>002/B</td>
+                    <td>Dinas</td>
+                    <td>Pengumuman</td>
+                    <td><span class="status ok">Disetujui</span></td>
+                    <td><button class="btn-view">Lihat</button></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
 </div>
-
-<div class="sidebar">
-    <div class="menu-btn">☰</div>
-</div>
-
+<script src="../js/sidebar.js"></script>
 </body>
 </html>

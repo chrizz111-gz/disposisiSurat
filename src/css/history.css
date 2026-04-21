@@ -1,174 +1,222 @@
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-
-    /* Background gambar + Ombre vertikal */
-    background: 
-        linear-gradient(to bottom, rgba(179, 176, 176, 0.70), rgba(12, 135, 216, 0.50)),
-        url("../assets/IMG_0411.PNG") no-repeat center center fixed;
-
+    background: url("../assets/IMG_0411.PNG") no-repeat center center;
     background-size: cover;
-    background-attachment: fixed;
+    background-attachment: fixed; /* optional biar ada efek halus */
 }
-
-/* HEADER */
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #0b4a6f;
-    height: 70px;
-    padding: 0 20px;
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;
-}
-
-.logo {
-    width: 50px;
-}
-
-.title {
-    color: white;
-    font-size: 22px;
-    font-weight: bold;
-    margin-left: 10px;
-}
-
-.filter-container select {
-    padding: 8px;
-    border-radius: 5px;
-}
-
-/* CONTENT */
-.content {
+/* CONTAINER */
+.history-container {
     padding: 30px;
 }
 
-/* CARD */
-.card {
-    width: 40%;
-    margin: 25px auto;
-    border-radius: 10px;
-    padding: 18px 18px 0 18px;
-    position: relative;
-    min-height: 145px;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Warna card */
-.masuk {
-    background: #88c2f7;
-    border: 4px solid #215f8b;
-}
-
-.keluar {
-    background: #e7a793;
-    border: 4px solid #b65c3a;
-}
-
-/* HEADER DALAM CARD */
-.card-header {
+/* HEADER */
+.history-header {
     display: flex;
     justify-content: space-between;
-    font-weight: bold;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-.card-header .date {
-    font-size: 14px;
-    color: white;
-    font-weight: bold;
-}
-
-.label {
-    font-size: 15px;
-    font-weight: bold;
-    color: white;
-}
-
-.icon {
-    margin-right: 4px;
-}
-
-/* INFO */
-.info {
-    margin-top: 10px;
-}
-
-.info .small-text {
-    font-size: 13px;
-    margin: 3px 0;
-    color: white;
-}
-
-/* FOOTER */
-.card-footer {
-    margin-top: auto;
-    padding-top: 5px;
-    padding-bottom: 0;
+/* TAB */
+.tabs {
     display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
+    gap: 10px;
 }
 
-/* Maskot menempel tepat di garis bawah */
-.card-footer .maskot {
-    width: 60px;
-    margin: 0;
-    align-self: center;
+.tab {
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: none;
+    background: #dfe6ee;
+    cursor: pointer;
 }
 
-/* Tombol ada sedikit jarak dari bawah */
-.footer-left button,
-.footer-right button {
-    margin-bottom: 3px;
-    padding: 7px 14px;
+.tab.active {
+    background: #2B6F8B;
+    color: white;
+}
+
+/* TOOLS */
+.tools {
+    display: flex;
+    gap: 10px;
+}
+
+.search {
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+.filter {
+    padding: 8px;
+    border-radius: 8px;
+}
+
+/* TABLE CARD */
+.table-card {
+    background: rgba(255,255,255,0.8);
+    border-radius: 15px;
+    padding: 15px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #2B6F8B;
+    color: white;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+}
+
+tbody tr {
+    border-bottom: 1px solid #ddd;
+    transition: 0.2s;
+}
+
+tbody tr:hover {
+    background: rgba(43,111,139,0.1);
+}
+
+/* STATUS */
+.status {
+    padding: 5px 12px;
+    border-radius: 15px;
     font-size: 12px;
 }
 
-/* Tombol warna */
-.btn-accept {
-    background: #35b839;
+.status.ok {
+    background: #2ecc71;
     color: white;
-    border-radius: 5px;
-    border: none;
 }
 
-.btn-reject {
-    background: #da0b04;
-    color: white;
-    border-radius: 5px;
-    border: none;
-}
-
+/* BUTTON */
 .btn-view {
-    background: #1b8ad9;
+    background: #2B6F8B;
     color: white;
-    border-radius: 5px;
     border: none;
+    padding: 6px 14px;
+    border-radius: 15px;
+    cursor: pointer;
 }
 
-.btn-delete {
-    background: red;
-    color: white;
-    border-radius: 5px;
-    border: none;
+.btn-view:hover {
+    background: #1f4f63;
 }
 
-/* SIDEBAR */
-.sidebar {
+
+/* ================= HAMBURGER ================= */
+.hamburger {
     position: fixed;
     bottom: 20px;
     left: 20px;
+    width: 55px;
+    height: 55px;
+    border: none;
+    border-radius: 10px;
+    background: #2B6F8B;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 1000;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    transition: 0.3s ease;
 }
 
-.menu-btn {
-    font-size: 32px;
-    background: #073b5c;
+/* ================= SIDEBAR ================= */
+.sidebar {
+    position: fixed;
+    top: 80px;                      /* 🔥 tinggi topbar */
+    left: 0;
+
+    width: 280px;
+    height: calc(100vh - 80px);     /* 🔥 full sampai bawah */
+
+    background: rgba(52, 130, 160, 0.95);
+    padding: 25px 15px;
+
+    backdrop-filter: blur(3px);
+    box-shadow: 3px 0 10px rgba(0,0,0,0.3);
+
+    transform: translateX(-100%);
+    transition: transform 0.35s ease;
+    z-index: 999;
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%);
+}
+
+.sidebar:not(.hidden) {
+    transform: translateX(0);
+}
+
+
+/* Sidebar Button */
+.side-btn {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 14px;
+    background: #6FBCE1;
     color: white;
-    padding: 10px 15px;
-    border-radius: 8px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    white-space: nowrap;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.side-btn img {
+    width: 30px;
+    flex-shrink: 0;
+}
+
+.side-btn {
+    font-weight: 600;
+
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+
+/* Sidebar Button */
+.side-btn {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 14px;
+    background: #6FBCE1;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    white-space: nowrap;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.side-btn img {
+    width: 30px;
+    flex-shrink: 0;
 }

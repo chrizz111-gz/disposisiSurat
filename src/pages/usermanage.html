@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Approval Akun</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/usermanage.css">
+</head>
+
+<body>
+
+<!-- HEADER (TETAP) -->
+<header class="topbar">
+    <img src="../assets/logo.png" class="logo">
+    <h2>SMKN 2 SINGOSARI</h2>
+</header>
+
+<!-- ================= HAMBURGER ================= -->
+    <button id="toggleSidebar" class="hamburger" aria-label="Toggle Sidebar">
+        ☰
+    </button>
+
+        <aside id="sidebar" class="sidebar hidden">
+            <a href="home.html" class="side-btn">
+                BERANDA <img src="../assets/home.png" alt="">
+            </a>
+
+            <a href="profile.html" class="side-btn">
+                PENGGUNA <img src="../assets/user.png" alt="">
+            </a>
+
+            <a href="suratmasuk.html" class="side-btn">
+                SURAT MASUK <img src="../assets/in.png" alt="">
+            </a>
+
+            <a href="suratkeluar.html" class="side-btn">
+                SURAT KELUAR <img src="../assets/out.png" alt="">
+            </a>
+
+            <a href="history.html" class="side-btn">
+                RIWAYAT <img src="../assets/history.png" alt="">
+            </a>
+
+            <a href="usermanage.html" class="side-btn">
+                PERSETUJUAN AKUN <img src="../assets/users.png" alt="">
+            </a>
+        </aside>
+
+<!-- CONTAINER -->
+<div class="approval-container">
+
+    <h1 class="page-title">Persetujuan Akun</h1>
+
+    <div class="approval-list">
+
+        <!-- ITEM 1 -->
+        <div class="approval-card">
+            <div class="user-info">
+                <div class="avatar"></div>
+                <div>
+                    <div class="name">ZulkifliAbdillah</div>
+                    <div class="role">Waka Kesiswaan</div>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button class="btn-accept">Diterima</button>
+                <button class="btn-reject">Ditolak</button>
+            </div>
+        </div>
+
+        <!-- ITEM 2 -->
+        <div class="approval-card">
+            <div class="user-info">
+                <div class="avatar"></div>
+                <div>
+                    <div class="name">Sumijah</div>
+                    <div class="role">Kepala Sekolah</div>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button class="btn-accept">Diterima</button>
+                <button class="btn-reject">Ditolak</button>
+            </div>
+        </div>
+
+        <!-- ITEM 3 -->
+        <div class="approval-card">
+            <div class="user-info">
+                <div class="avatar"></div>
+                <div>
+                    <div class="name">Roudhothul Husna Yanif</div>
+                    <div class="role">Bimbingan Konseling</div>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button class="btn-accept">Diterima</button>
+                <button class="btn-reject">Ditolak</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<script src="../js/sidebar.js"></script>
+</body>
+</html>
