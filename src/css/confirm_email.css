@@ -1,0 +1,274 @@
+/* style.css */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    background: linear-gradient(
+        to bottom,
+        #5d99ce 0%,
+        #a9c7e6 50%,
+        #efd9d0 100%
+    );
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+
+.navbar{
+    width: 100%;
+    height: 85px;
+    background: #176b9c;
+    display: flex;
+    align-items: center;
+    padding: 0 25px;
+}
+
+.logo-area{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.logo-area h2{
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* CONTAINER */
+
+.container{
+    width: 100%;
+    padding: 35px 70px;
+}
+
+/* TITLE SECTION */
+
+.title-section{
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin-bottom: 40px;
+}
+
+/* ICON */
+
+.icon-box{
+    width: 90px;
+    height: 90px;
+    background: white;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-box img{
+    width: 55px;
+}
+
+/* TITLE TEXT */
+
+.title-text h1{
+    color: white;
+    font-size: 58px;
+    margin-bottom: 10px;
+}
+
+.title-text p{
+    color: white;
+    font-size: 20px;
+    line-height: 1.5;
+    width: 650px;
+}
+
+/* CARD */
+
+.card{
+    width: 950px;
+    min-height: 430px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 22px;
+    margin: auto;
+    position: relative;
+    padding: 70px 50px;
+    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* MASKOT ATAS */
+
+.maskot-top{
+    position: absolute;
+    top: -195px;
+    right: 40px;
+    z-index: 3;
+}
+
+.maskot-top img{
+    width: 275px;
+}
+
+/* MASKOT DALAM CARD */
+
+.maskot-card{
+    position: absolute;
+    right: 20px;
+    bottom: 100px;
+    z-index: 1;
+}
+
+.maskot-card img{
+    width: 420px;
+}
+
+/* FORM */
+
+.form-area{
+    width: 50%;
+    position: relative;
+    z-index: 2;
+}
+
+.form-area label{
+    display: block;
+    font-size: 22px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 15px;
+}
+
+/* INPUT */
+
+.form-area input{
+    width: 100%;
+    height: 60px;
+    background: #2f74aa;
+    border: none;
+    border-radius: 8px;
+    padding: 0 18px;
+    color: white;
+    font-size: 18px;
+    outline: none;
+}
+
+.form-area input::placeholder{
+    color: rgba(255,255,255,0.5);
+}
+
+/* SMALL TEXT */
+
+.form-area small{
+    display: block;
+    margin-top: 12px;
+    color: gray;
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+/* BUTTON */
+
+.verify-btn{
+    margin-top: 40px;
+    width: 360px;
+    height: 60px;
+    border: 1px solid #6ca6ce;
+    border-radius: 8px;
+    background: white;
+    font-size: 20px;
+    font-weight: bold;
+    color: #444;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.verify-btn:hover{
+    background: #f3f3f3;
+}
+
+/* LOGIN TEXT */
+
+.login-text{
+    margin-top: 12px;
+    margin-left: 30px;
+    color: gray;
+    font-size: 18px;
+}
+
+.login-text span{
+    color: #176b9c;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* FOOTER */
+
+footer{
+    width: 100%;
+    text-align: center;
+    margin-top: 25px;
+}
+
+footer p{
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 1000px){
+
+    .card{
+        width: 100%;
+    }
+
+    .form-area{
+        width: 100%;
+    }
+
+    .maskot{
+        position: relative;
+        top: 0;
+        right: 0;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+}
+
+@media(max-width: 768px){
+
+    .title-section{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .title-text h1{
+        font-size: 38px;
+    }
+
+    .title-text p{
+        width: 100%;
+        font-size: 17px;
+    }
+
+    .verify-btn{
+        width: 100%;
+    }
+
+}

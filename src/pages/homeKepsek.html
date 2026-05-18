@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMKN 2 SINGOSARI - Home Kepsek</title>
+    <title>Home For Kepsek</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/home.css">
 </head>
@@ -18,7 +18,7 @@
 
     <!-- ================= HAMBURGER ================= -->
     <button id="toggleSidebar" class="hamburger" aria-label="Toggle Sidebar">
-        ☰
+        III
     </button>
 
     <!-- ================= WRAPPER ================= -->
@@ -26,29 +26,18 @@
 
         <!-- ================= SIDEBAR ================= -->
         <aside id="sidebar" class="sidebar hidden">
-            <a href="home.html" class="side-btn">
+            <a href="homeKepsek.html" class="side-btn">
                 BERANDA <img src="../assets/home.png" alt="">
             </a>
 
-            <a href="account.html" class="side-btn">
+            <a href="profile_kepsek.html" class="side-btn">
                 PENGGUNA <img src="../assets/user.png" alt="">
             </a>
 
-            <a href="suratmasuk.html" class="side-btn">
-                SURAT MASUK <img src="../assets/in.png" alt="">
-            </a>
-
-            <a href="suratkeluar.html" class="side-btn">
-                SURAT KELUAR <img src="../assets/out.png" alt="">
-            </a>
-
-            <a href="history.html" class="side-btn">
+            <a href="history_kepsek.html" class="side-btn">
                 RIWAYAT <img src="../assets/history.png" alt="">
             </a>
 
-            <a href="usermanage.html" class="side-btn">
-                PERSETUJUAN AKUN <img src="../assets/users.png" alt="">
-            </a>
         </aside>
 
         <!-- ================= CONTENT ================= -->
@@ -56,8 +45,10 @@
 
             <div class="card-container">
 
-                <!-- CARD : SURAT MASUK -->
+               <!-- CARD : SURAT MASUK -->
                 <article class="card blue">
+                    <span class="badge-new">Surat Baru</span>
+
                     <div class="card-header">
                         <span class="tanggal">Senin, 12 Oktober 2025</span>
                         <span class="title">
@@ -66,10 +57,37 @@
                         </span>
                     </div>
 
-                    <p>
-                        Nomor Surat : 110920932984<br>
-                        Asal : asal asalan<br>
-                        Perihal : MBG
+                    <p class="detail-surat">
+                        <span>Nomor Surat</span><span>: 421/SMKN2/2025</span>
+                        <span>Asal</span><span>: SMK NEGERI 2 SINGOSARI</span>
+                        <span>Perihal</span><span>: Undangan Rapat SIKAP</span>
+                    </p>
+
+                    <div class="card-footer">
+                        <button class="btn-blue" onclick="window.location.href='disposisi_masuk.html'">
+                            Lihat
+                        </button>
+                    </div>
+
+                    <img src="../assets/mascot1.png" class="maskot" alt="">
+                </article>
+
+               <!-- CARD : SURAT MASUK -->
+                <article class="card blue">
+                    <span class="badge-new">Surat Baru</span>
+
+                    <div class="card-header">
+                        <span class="tanggal">Senin, 12 Oktober 2025</span>
+                        <span class="title">
+                            <img src="../assets/surat-masuk.png" class="title-icon" alt="">
+                            SURAT MASUK
+                        </span>
+                    </div>
+
+                    <p class="detail-surat">
+                        <span>Nomor Surat</span><span>: 421/SMKN2/2025</span>
+                        <span>Asal</span><span>: SMK NEGERI 2 SINGOSARI</span>
+                        <span>Perihal</span><span>: Undangan Rapat SIKAP</span>
                     </p>
 
                     <div class="card-footer">
@@ -81,6 +99,7 @@
 
                 <!-- CARD : SURAT KELUAR -->
                 <article class="card orange">
+                    <span class="badge-new">Surat Baru</span>
                     <div class="card-header">
                         <span class="tanggal">Senin, 12 Oktober 2025</span>
                         <span class="title">
@@ -89,11 +108,11 @@
                         </span>
                     </div>
 
-                    <p>
-                        Dari<br>
-                        Kode<br>
-                        Nomor Surat<br>
-                        Perihal
+                    <p class="detail-surat">
+                        <span>Dari</span><span>: Tata Usaha</span>
+                        <span>Kode</span><span>: 006</span>
+                        <span>Nomor Surat</span><span>: 123/TU/X/2025</span>
+                        <span>Perihal</span><span>: Permohonan Data Siswa</span>
                     </p>
 
                     <div class="card-footer">

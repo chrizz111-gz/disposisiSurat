@@ -140,11 +140,11 @@ body {
 /* ================= SIDEBAR ================= */
 .sidebar {
     position: fixed;
-    top: 80px;                      /* 🔥 tinggi topbar */
+    top: 60px;                      /* ✅ samakan dengan topbar */
     left: 0;
 
     width: 280px;
-    height: calc(100vh - 80px);     /* 🔥 full sampai bawah */
+    height: calc(100vh - 60px);     /* ✅ samakan juga */
 
     background: rgba(52, 130, 160, 0.95);
     padding: 25px 15px;

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log Activity</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/log.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <img src="../assets/logo.png" class="logo" alt="Logo">
+        <h2>DISPOSISI SURAT</h2>
+    </header>
+
+  <!-- BACKGROUND -->
+  <img src="../assets/beranda.png" class="background">
+
+  <!-- MAIN CARD -->
+  <section class="card">
+
+    <!-- HEADER CARD -->
+    <div class="card-header">
+
+      <div class="title-area">
+
+        <div class="icon-box">
+          <img src="../assets/log.png">
+        </div>
+
+        <h1>LOG ACTIVITY</h1>
+
+      </div>
+
+      <!-- SEARCH -->
+      <div class="search-box">
+
+        <img src="../assets/pencarian.png">
+
+        <input 
+        type="text" 
+        id="searchInput"
+        placeholder="Cari tanggal..."
+        >
+
+      </div>
+
+    </div>
+
+    <!-- TABLE -->
+    <div class="table-wrapper" id="tableWrapper">
+
+      <!-- TABLE HEADER -->
+      <div class="table-header">
+
+        <div>WAKTU</div>
+        <div>PENGGUNA</div>
+        <div>AKTIVITAS</div>
+
+      </div>
+
+      <!-- DATA DARI JS MASUK KE SINI -->
+      <div id="logContainer"></div>
+
+    </div>
+
+  </section>
+
+  <script src="../js/log.js"></script>
+
+</body>
+</html>

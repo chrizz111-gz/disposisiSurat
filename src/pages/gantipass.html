@@ -2,46 +2,89 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Ganti Password</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <title>Buat Kata Sandi Baru</title>
+      <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/gantiPass.css">
 </head>
 <body>
 
-    <!-- TOPBAR -->
+<!-- HEADER -->
     <header class="topbar">
         <img src="../assets/logo.png" class="logo">
         <h2>DISPOSISI SURAT</h2>
     </header>
 
-    <!-- CONTAINER -->
-    <div class="password-container">
+<!-- CONTENT -->
+<div class="content">
 
-        <div class="password-card">
-            <h3>Ubah Password</h3>
+    <!-- TITLE -->
+    <div class="title">
+        <div class="icon-box">
+            <img src="../assets/key.png">
+        </div>
+        <div>
+            <h1>Buat kata sandi baru</h1>
+            <p>Kata sandi baru harus berbeda dari kata sandi yang pernah kamu gunakan sebelumnya.</p>
+        </div>
+    </div>
 
-            <div class="form-group">
-                <label>Password Saat Ini</label>
-                <input type="password">
-            </div>
+    <!-- WRAPPER -->
+    <div class="card-wrapper">
 
-            <div class="form-group">
-                <label>Password Baru</label>
-                <input type="password">
-            </div>
-
-            <div class="form-group">
-                <label>Konfirmasi Password</label>
-                <input type="password">
-            </div>
-
-            <div class="button-row">
-                <button class="btn-primary">Ubah Password</button>
-                <a href="profile.html" class="btn-secondary">Batal</a>
-            </div>
+        <!-- MASKOT -->
+        <div class="maskot-top">
+            <img src="../assets/maskot2.png">
         </div>
 
+        <!-- CARD -->
+        <div class="card">
+
+            <div class="form-left">
+
+                <label>Kata sandi baru :</label>
+                <div class="input-box">
+                    <input type="password" id="password" placeholder="Masukan kata sandi baru.....">
+                    <span class="toggle-password">
+                        <img src="../assets/mata.png" class="eye-icon">
+                    </span>
+                </div>
+
+                <!-- STRENGTH -->
+                <div class="strength">
+                    <div class="bar" id="bar1"></div>
+                    <div class="bar" id="bar2"></div>
+                    <div class="bar" id="bar3"></div>
+                </div>
+
+                <p id="statusText"></p>
+
+                <label>Konfirmasi kata sandi baru :</label>
+                <div class="input-box">
+                    <input type="password" id="confirmPassword" placeholder="Konfirmasi kata sandi baru.....">
+                    <span class="toggle-password">
+                        <img src="../assets/mata.png" class="eye-icon">
+                    </span>
+                </div>
+
+                <p id="matchText"></p>
+
+                <a href="berhasilpass.html">
+                    <button>Simpan Kata Sandi →</button>
+                </a>
+
+            </div>
+
+            <div class="form-right">
+                <img src="../assets/IMG_0413.PNG">
+            </div>
+
+        </div>
     </div>
+
+</div>
+
+<!-- LINK KE JS -->
+<script src="../js/gantipass.js"></script>
 
 </body>
 </html>

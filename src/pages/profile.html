@@ -16,8 +16,10 @@
         <h2>DISPOSISI SURAT</h2>
     </header>
 
-    <!-- HAMBURGER -->
-    <button id="toggleSidebar" class="hamburger">☰</button>
+    <!-- ================= HAMBURGER ================= -->
+    <button id="toggleSidebar" class="hamburger" aria-label="Toggle Sidebar">
+        III
+    </button>
 
     <!-- WRAPPER -->
     <div class="wrapper">
@@ -57,7 +59,6 @@
                 <!-- FOTO -->
                 <div class="profile-photo">
                     <div class="photo-circle">👤</div>
-                    <button class="btn-edit">Ganti Foto</button>
                 </div>
 
                 <!-- CARD -->
@@ -74,7 +75,11 @@
                         <input type="email" id="email" value="frncs@email.com">
                     </div>
 
-                    <button class="btn-primary">Simpan Profil</button>
+                    <div class="form-group">
+                        <label>Jabatan</label>
+                        <input type="jbtn" id="jbtn" value="Tata Usaha">
+                    </div>
+
 
                     <a href="gantipass.html" class="btn-link">
                         Ganti Password
@@ -89,28 +94,6 @@
 
     <!-- SCRIPT SIDEBAR -->
     <script src="../js/sidebar.js"></script>
-    <script>
-    // Ambil data dari localStorage
-    const namaInput = document.getElementById("nama");
-    const emailInput = document.getElementById("email");
-
-    // Load data kalau ada
-    if(localStorage.getItem("nama")) {
-        namaInput.value = localStorage.getItem("nama");
-    }
-
-    if(localStorage.getItem("email")) {
-        emailInput.value = localStorage.getItem("email");
-    }
-
-    // Simpan saat tombol diklik
-    document.querySelector(".btn-primary").addEventListener("click", function() {
-        localStorage.setItem("nama", namaInput.value);
-        localStorage.setItem("email", emailInput.value);
-
-        alert("Profil berhasil disimpan!");
-    });
-</script>
 
 </body>
 </html>

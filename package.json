@@ -12,5 +12,8 @@
   "type": "commonjs",
   "devDependencies": {
     "electron": "^39.2.0"
+  },
+  "dependencies": {
+    "pg": "^8.20.0"
   }
 }

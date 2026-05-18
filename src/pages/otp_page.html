@@ -1,0 +1,94 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verifikasi OTP</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/otp.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+    <header class="topbar">
+        <img src="../assets/logo.png" class="logo">
+        <h2>DISPOSISI SURAT</h2>
+    </header>
+
+  <!-- MAIN -->
+  <section class="container">
+
+    <!-- TITLE -->
+    <div class="title-area">
+
+      <!-- ICON -->
+      <div class="otp-icon">
+        <!-- Ganti icon sendiri -->
+        <img src="../assets/otp-icon.png" alt="OTP Icon">
+      </div>
+
+      <!-- TEXT -->
+      <div class="title-text">
+        <h1>Masukan kode OTP</h1>
+        <p>
+          Kode 6 digit telah dikirim ke email kamu.<br>
+          Kode berlaku 2 menit.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- CARD -->
+    <div class="otp-card">
+
+      <!-- MASKOT -->
+      <div class="maskot">
+        <!-- Ganti gambar sendiri -->
+        <img src="../assets/mascot1.png" alt="Maskot">
+      </div>
+
+      <!-- OTP INPUT -->
+      <div class="otp-boxes">
+
+        <input type="text" maxlength="1" class="otp-input">
+        <input type="text" maxlength="1" class="otp-input">
+        <input type="text" maxlength="1" class="otp-input">
+        <input type="text" maxlength="1" class="otp-input">
+        <input type="text" maxlength="1" class="otp-input">
+        <input type="text" maxlength="1" class="otp-input">
+
+      </div>
+
+      <!-- INFO -->
+      <div class="info-row">
+
+        <div class="timer">
+          ⏲ Kode berlaku 07:42
+        </div>
+
+        <div class="resend">
+          Kirim ulang kode
+        </div>
+
+      </div>
+
+      <!-- BUTTON -->
+      <button class="verify-btn">
+        Verifikasi kode →
+      </button>
+
+      <!-- EMAIL -->
+      <p class="email-text">
+        Email salah?
+        <span><a href="confirm_email.html">Ubah alamat Email</a></span>
+      </p>
+
+    </div>
+
+  </section>
+
+  <script src="../js/otp.js"></script>
+
+</body>
+</html>

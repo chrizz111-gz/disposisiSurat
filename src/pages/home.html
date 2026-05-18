@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMKN 2 SINGOSARI - Sistem Manajemen Surat</title>
+    <title>Home For Admin</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/home.css">
 </head>
@@ -18,13 +18,14 @@
 
     <!-- ================= HAMBURGER ================= -->
     <button id="toggleSidebar" class="hamburger" aria-label="Toggle Sidebar">
-        ☰
+        III
     </button>
 
     <!-- ================= WRAPPER ================= -->
     <div class="wrapper">
 
         <!-- ================= SIDEBAR ================= -->
+         <!-- ================= SIDEBAR ================= -->
         <aside id="sidebar" class="sidebar hidden">
             <a href="home.html" class="side-btn">
                 BERANDA <img src="../assets/home.png" alt="">
@@ -47,7 +48,7 @@
             </a>
 
             <a href="usermanage.html" class="side-btn">
-                PERSETUJUAN AKUN <img src="../assets/users.png" alt="">
+                MANAJEMEN AKUN <img src="../assets/users.png" alt="">
             </a>
         </aside>
 
@@ -55,8 +56,32 @@
         <main class="content">
 
             <div class="card-container">
+                <!-- CARD : SURAT KELUAR -->
+                <article class="card orange">
+                    <div class="card-header">
+                        <span class="tanggal">Senin, 12 Oktober 2025</span>
+                        <span class="title">
+                            <img src="../assets/surat-keluar.png" class="title-icon" alt="">
+                            SURAT KELUAR
+                        </span>
+                    </div>
 
-                <!-- CARD : SURAT MASUK -->
+                    <p class="detail-surat">
+                        <span>Dari</span><span>: Tata Usaha</span>
+                        <span>Kode</span><span>: 006</span>
+                        <span>Nomor Surat</span><span>: 123/TU/X/2025</span>
+                        <span>Perihal</span><span>: Permohonan Data Siswa</span>
+                    </p>
+
+                    <div class="card-footer">
+                        <span class="status-badge bg-yellow">Proses</span> 
+                        <button class="btn-blue">Lihat</button>
+                    </div>
+
+                    <img src="../assets/mascot2.png" class="maskot" alt="">
+                </article>                
+
+               <!-- CARD : SURAT MASUK -->
                 <article class="card blue">
                     <div class="card-header">
                         <span class="tanggal">Senin, 12 Oktober 2025</span>
@@ -66,14 +91,40 @@
                         </span>
                     </div>
 
-                    <p>
-                        Nomor Surat<br>
-                        Asal<br>
-                        Perihal
+                    <p class="detail-surat">
+                        <span>Nomor Surat</span><span>: 421/SMKN2/2025</span>
+                        <span>Asal</span><span>: SMK NEGERI 2 SINGOSARI</span>
+                        <span>Perihal</span><span>: Undangan Rapat SIKAP</span>
                     </p>
 
+
                     <div class="card-footer">
-                        <button class="btn-yellow">Proses</button>
+                        <span class="status-badge bg-yellow">Proses</span> 
+                        <button class="btn-blue">Lihat</button>
+                    </div>
+
+                    <img src="../assets/mascot1.png" class="maskot" alt="">
+                </article>
+
+               <!-- CARD : SURAT MASUK -->
+                <article class="card blue">
+                    <div class="card-header">
+                        <span class="tanggal">Senin, 12 Oktober 2025</span>
+                        <span class="title">
+                            <img src="../assets/surat-masuk.png" class="title-icon" alt="">
+                            SURAT MASUK
+                        </span>
+                    </div>
+
+                    <p class="detail-surat">
+                        <span>Nomor Surat</span><span>: 421/SMKN2/2025</span>
+                        <span>Asal</span><span>: Dinas Pendidikan Malang</span>
+                        <span>Perihal</span><span>: Undangan Rapat Koordinasi</span>
+                    </p>
+
+
+                    <div class="card-footer">
+                        <span class="status-badge bg-green">Terima</span> 
                         <button class="btn-blue">Lihat</button>
                     </div>
 
@@ -90,15 +141,15 @@
                         </span>
                     </div>
 
-                    <p>
-                        Dari<br>
-                        Kode<br>
-                        Nomor Surat<br>
-                        Perihal
+                    <p class="detail-surat">
+                        <span>Dari</span><span>: Tata Usaha</span>
+                        <span>Kode</span><span>: 006</span>
+                        <span>Nomor Surat</span><span>: 123/TU/X/2025</span>
+                        <span>Perihal</span><span>: Permohonan Data Siswa</span>
                     </p>
 
                     <div class="card-footer">
-                        <button class="btn-green">Terima</button>
+                        <span class="status-badge bg-red">Tolak</span> 
                         <button class="btn-blue">Lihat</button>
                     </div>
 

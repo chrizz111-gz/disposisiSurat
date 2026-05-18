@@ -1,13 +1,16 @@
-// Fungsi Show/Hide Password
-function togglePassword(id, icon) {
-    const input = document.getElementById(id);
+let redirectUrl = "";
 
-    if (input.type === "password") {
-        input.type = "text";
-        icon.src = "../assets/eye-off.png";
-    } else {
-        input.type = "password";
-        icon.src = "../assets/eye.png";
+function showAlert(message, url = "") {
+    document.getElementById("alertMessage").innerText = message;
+    document.getElementById("customAlert").style.display = "flex";
+    redirectUrl = url;
+}
+
+function closeAlert() {
+    document.getElementById("customAlert").style.display = "none";
+
+    if (redirectUrl !== "") {
+        window.location.href = redirectUrl;
     }
 }
 
@@ -18,26 +21,21 @@ document.getElementById("register").onclick = function () {
     const confirmpass = document.getElementById("confirmpass").value.trim();
     const jabatan = document.getElementById("jabatan").value;
 
-    // Cek input kosong
     if (username === "" || email === "" || password === "" || confirmpass === "" || jabatan === "") {
-        alert("Semua kolom wajib diisi!");
+        showAlert("Semua kolom wajib diisi!");
         return;
     }
 
-    // Validasi email harus format @gmail.com
     const emailRegex = /^[a-zA-Z0-9._-]+@gmail\.com$/;
     if (!emailRegex.test(email)) {
-        alert("Email harus menggunakan format example@gmail.com !");
+        showAlert("Email harus menggunakan format example@gmail.com!");
         return;
     }
 
-    // Cek jika password tidak sama
     if (password !== confirmpass) {
-        alert("Password dan Confirm Password tidak sama!");
+        showAlert("Password dan Confirm Password tidak sama!");
         return;
     }
 
-    // Jika semua benar → pindah ke halaman login
-    alert("Pendaftaran berhasil!");
-    window.location.href = "login.html";
+    showAlert("Pendaftaran berhasil!", "login.html");
 };

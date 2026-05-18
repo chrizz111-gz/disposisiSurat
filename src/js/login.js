@@ -4,7 +4,24 @@ const password = document.getElementById("password");
 const btnLogin = document.getElementById("btnLogin");
 const togglePw = document.getElementById("togglePw");
 
-// Fitur show/hide password
+let redirectUrl = "";
+
+// ================= ALERT CUSTOM =================
+function showAlert(message, url = "") {
+    document.getElementById("alertMessage").innerText = message;
+    document.getElementById("customAlert").style.display = "flex";
+    redirectUrl = url;
+}
+
+function closeAlert() {
+    document.getElementById("customAlert").style.display = "none";
+
+    if (redirectUrl !== "") {
+        window.location.href = redirectUrl;
+    }
+}
+
+// ================= SHOW / HIDE PASSWORD =================
 togglePw.addEventListener("click", () => {
     if (password.type === "password") {
         password.type = "text";
@@ -15,24 +32,54 @@ togglePw.addEventListener("click", () => {
     }
 });
 
-// Validasi input sebelum pindah halaman
+// ================= VALIDASI LOGIN =================
 btnLogin.addEventListener("click", () => {
+
     const emailValue = email.value.trim();
     const passwordValue = password.value.trim();
 
-    // Validasi email dan password tidak kosong
+    // Validasi kosong
     if (emailValue === "" || passwordValue === "") {
-        alert("Tolong isi email dan password terlebih dahulu.");
-        return; // Stop → tidak berpindah halaman
+        showAlert("Tolong isi email dan password terlebih dahulu.");
+        return;
     }
 
-    // Validasi format email harus mengandung '@gmail.com'
+    // Validasi email format
     const emailRegex = /^[a-zA-Z0-9._-]+@gmail\.com$/;
+
     if (!emailRegex.test(emailValue)) {
-        alert("Email harus berformat 'example@gmail.com'.");
-        return; // Stop → tidak berpindah halaman
+        showAlert("Email harus berformat 'example@gmail.com'.");
+        return;
     }
 
-    // Jika semua valid → pindah halaman
-    window.location.href = "home.html";
-}); 
+    // ================= LOGIN ROLE =================
+
+    // ADMIN
+    if (emailValue === "admin@gmail.com" && passwordValue === "admin123") {
+
+        showAlert("Login Admin berhasil!", "home.html");
+
+    }
+
+    // KEPSEK
+    else if (emailValue === "kepsek@gmail.com" && passwordValue === "kepsek123") {
+
+        showAlert("Login Kepala Sekolah berhasil!", "homeKepsek.html");
+
+    }
+
+    // USER
+    else if (emailValue === "user@gmail.com" && passwordValue === "user123") {
+
+        showAlert("Login User berhasil!", "home_user.html");
+
+    }
+
+    // SALAH
+    else {
+
+        showAlert("Email atau password salah!");
+
+    }
+
+});

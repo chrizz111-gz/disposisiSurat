@@ -1,0 +1,97 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Input Email</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/confirm_email.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+    <header class="topbar">
+        <img src="../assets/logo.png" class="logo">
+        <h2>DISPOSISI SURAT</h2>
+    </header>
+
+  <!-- MAIN -->
+  <section class="container">
+
+    <!-- TITLE -->
+    <div class="title-section">
+
+      <!-- ICON -->
+      <div class="icon-box">
+        <!-- Ganti icon -->
+        <img src="../assets/gmail.png" alt="Email Icon">
+      </div>
+
+      <!-- TEXT -->
+      <div class="title-text">
+        <h1>Masukan alamat email kamu</h1>
+
+        <p>
+          Kami akan mengirimkan kode verifikasi ke
+          alamat email yang terdaftar di akun kamu.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- CARD -->
+    <div class="card">
+
+    <!-- MASKOT ATAS -->
+    <div class="maskot-top">
+        <img src="../assets/maskot2.png" alt="Maskot Atas">
+    </div>
+
+    <!-- MASKOT DALAM CARD -->
+    <div class="maskot-card">
+        <img src="../assets/IMG_0413.PNG" alt="Maskot Card">
+    </div>
+
+    <!-- FORM -->
+    <div class="form-area">
+
+        <label>Alamat email :</label>
+
+        <input 
+          type="email" 
+          id="email"
+          placeholder="Masukkan Alamat email....."
+        >
+
+        <!-- VALIDASI EMAIL -->
+        <p id="emailError"></p>
+
+        <small>
+            Gunakan email yang terdaftar saat pendaftaran akun.
+        </small>
+
+        <button class="verify-btn">
+            Kirim kode verifikasi →
+        </button>
+
+        <p class="login-text">
+            Ingat kata sandi?
+            <span><a href="login.html">Masuk</a></span>
+        </p>
+    </div>
+
+</div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© SMKN 2 SINGOSARI</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="../js/email.js"></script>
+
+</body>
+</html>

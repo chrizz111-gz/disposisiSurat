@@ -5,7 +5,7 @@ body {
 }
 /* CONTAINER */
 .history-container {
-    padding: 30px;
+    padding: 110px 30px 30px 30px;
 }
 
 /* HEADER */
@@ -98,6 +98,16 @@ tbody tr:hover {
     color: white;
 }
 
+.status.no {
+    background: red;
+    color: white;
+}
+
+.status.wait {
+    background: orange;
+    color: white;
+}
+
 /* BUTTON */
 .btn-view {
     background: #2B6F8B;
@@ -135,11 +145,11 @@ tbody tr:hover {
 /* ================= SIDEBAR ================= */
 .sidebar {
     position: fixed;
-    top: 80px;                      /* 🔥 tinggi topbar */
+    top: 60px;                      /* ✅ samakan dengan topbar */
     left: 0;
 
     width: 280px;
-    height: calc(100vh - 80px);     /* 🔥 full sampai bawah */
+    height: calc(100vh - 60px);     /* ✅ samakan juga */
 
     background: rgba(52, 130, 160, 0.95);
     padding: 25px 15px;

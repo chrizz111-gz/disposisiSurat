@@ -56,20 +56,37 @@ select.input {
     cursor: pointer;
 }
 
-/* PASSWORD */
+/* Pastikan container relatif terhadap isinya */
 .password-box {
     position: relative;
+    width: 100%;
 }
 
+/* Sesuaikan posisi mata */
 .password-box .show {
     width: 22px;
-    height: 22px;
+    height: auto;
     position: absolute;
     right: 20px;
-    top: 60%;
+    /* Menghitung posisi tengah: 
+       input punya margin-top 18px, maka ikon harus turun sedikit */
+    top: calc(50% + 9px); 
     transform: translateY(-50%);
     cursor: pointer;
+    z-index: 10; /* Agar tidak tertindih input */
+    opacity: 0.7;
+    transition: 0.3s;
 }
+
+.password-box .show:hover {
+    opacity: 1;
+}
+
+/* Tambahkan padding kanan pada input agar teks tidak menabrak ikon mata */
+.password-box .input {
+    padding-right: 50px;
+}
+
 
 /* TEXT */
 .signup-text {
@@ -100,4 +117,58 @@ select.input {
 
 .btn-login:hover {
     background: #3f8cc4;
+}
+
+.custom-alert {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.alert-box {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    animation: popup 0.3s ease;
+}
+
+.alert-box p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+.alert-box button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.alert-box button:hover {
+    background: #0056b3;
+}
+
+@keyframes popup {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
