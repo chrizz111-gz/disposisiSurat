@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daftar</title>
+    <title>Tambah Akun</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/register.css">
 </head>
@@ -15,53 +16,68 @@
         <h2>DISPOSISI SURAT</h2>
     </header>
 
-    <h2 class="login-title">DAFTAR</h2>
-    
+    <!-- 🔥 JUDUL HITAM -->
+    <h2 class="login-title">TAMBAH AKUN</h2>
+
     <div class="login-containers">
 
-<form>
-    <input type="text" id="username" class="input" placeholder="Nama">
+        <form id="registerForm">
+            <!-- Email -->
+            <label class="input-label">Email :</label>
+            <input type="email" id="email" class="input" placeholder="Masukkan Email...." required>
 
-    <input type="email" id="email" class="input" placeholder="Email">
+            <!-- Nama -->
+            <label class="input-label">Nama :</label>
+            <input type="text" id="username" class="input" placeholder="Masukkan Nama...." required>
 
-    <div class="password-box">
-        <input type="password" id="password" class="input" placeholder="Password">
-        <img src="../assets/eye.png" class="show" onclick="togglePassword('password', this)">
+            <!-- Kata Sandi -->
+            <label class="input-label">Kata Sandi :</label>
+            <div class="password-box">
+                <input type="password" id="password" class="input" placeholder="Masukkan Kata Sandi...." required>
+                <img src="../assets/eye.png" class="show" onclick="togglePassword('password', this)" alt="Toggle">
+            </div>
+
+            <!-- Ulangi Kata Sandi -->
+            <label class="input-label">Ulangi Kata Sandi :</label>
+            <div class="password-box">
+                <input type="password" id="confirmpass" class="input" placeholder="Masukkan Ulang Kata Sandi...."
+                    required>
+                <img src="../assets/eye.png" class="show" onclick="togglePassword('confirmpass', this)" alt="Toggle">
+            </div>
+
+            <!-- Jabatan -->
+            <label class="input-label">Jabatan :</label>
+            <div class="jabatan-section">
+                <div id="jabatanList" class="jabatan-list">
+                    <!-- Jabatan items akan ditambah di sini -->
+                </div>
+                <button type="button" class="btn-add-jabatan" onclick="addJabatanField()">
+                    + Tambah Jabatan
+                </button>
+            </div>
+
+            <!-- Error message -->
+            <p id="errorMsg" class="error-msg"></p>
+
+            <!-- 🔥 TOMBOL SIMPAN -->
+            <button type="button" id="registerBtn" class="btn-login" onclick="handleRegister()">
+                <span class="btn-text">SIMPAN</span>
+                <span class="btn-loading" style="display:none;">Memuat...</span>
+            </button>
+        </form>
+
     </div>
 
-    <div class="password-box">
-        <input type="password" id="confirmpass" class="input" placeholder="Confirm Password">
-        <img src="../assets/eye.png" class="show" onclick="togglePassword('confirmpass', this)">
+    <div id="customAlert" class="custom-alert" style="display:none;">
+        <div class="alert-box">
+            <p id="alertMessage"></p>
+            <button onclick="closeAlert()">OK</button>
+        </div>
     </div>
 
-    <select id="jabatan" class="input" style="cursor:pointer;">
-        <option selected disabled value="">Pilih Jabatan</option>
-        <option value="Kepala Sekolah">Kepala Sekolah</option>        
-        <option value="Tata Usaha">Tata Usaha</option>
-        <option value="Waka Kurikulum">Waka Kurikulum</option>
-        <option value="Waka Kesiswaan">Waka Kesiswaan</option>
-        <option value="Waka Humas">Waka Humas</option>
-        <option value="Waka Sarpras">Waka Sarpras</option>
-        <option value="Kepala Program">Kepala Program</option>
-        <option value="BK">BK</option>
-        <option value="BKK">BKK</option>
-    </select>
-
-    <p class="signup-text">Sudah Punya Akun? <a href="login.html">Masuk</a></p>
-
-    <button type="button" id="register" class="btn-login">Daftar</button>
-</form>
-
-</div>
-
-<div id="customAlert" class="custom-alert">
-    <div class="alert-box">
-        <p id="alertMessage"></p>
-        <button onclick="closeAlert()">OK</button>
-    </div>
-</div>
-
-<script src="../js/register.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/register.js"></script>
 
 </body>
+
 </html>

@@ -1,120 +1,99 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Surat</title>
+    <title>Detail Surat Masuk</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/detailmasuk.css">
+    <link rel="stylesheet" href="../css/suratmasuk.css">
 </head>
+
 <body>
 
+    <!-- TOPBAR -->
     <header class="topbar">
-        <img src="../assets/logo.png" class="logo" alt="Logo">
+        <img src="../assets/logo.png" class="logo">
         <h2>DISPOSISI SURAT</h2>
     </header>
-    
-<div class="container-detail">
 
-    <h2 class="title">DETAIL SURAT</h2>
+    <!-- HAMBURGER -->
+    <button id="toggleSidebar" class="hamburger" aria-label="Toggle Sidebar">
+        III
+    </button>
 
-    <div class="detail-wrapper">
+    <!-- WRAPPER -->
+    <div class="wrapper">
 
-        <!-- KOLOM KIRI -->
-        <div class="left-panel">
-            <div class="card surat-preview">
-    <h3>Surat Masuk</h3>
+        <!-- SIDEBAR -->
+        <aside id="sidebar" class="sidebar hidden">
+            <a href="home.html" class="side-btn">
+                BERANDA <img src="../assets/home.png" alt="">
+            </a>
+            <a href="profile.html" class="side-btn">
+                PENGGUNA <img src="../assets/user.png" alt="">
+            </a>
+            <a href="suratmasuk.html" class="side-btn">
+                SURAT MASUK <img src="../assets/in.png" alt="">
+            </a>
+            <a href="suratkeluar.html" class="side-btn">
+                SURAT KELUAR <img src="../assets/out.png" alt="">
+            </a>
+            <a href="history.html" class="side-btn">
+                RIWAYAT <img src="../assets/history.png" alt="">
+            </a>
+            <a href="usermanage.html" class="side-btn">
+                PERSETUJUAN AKUN <img src="../assets/users.png" alt="">
+            </a>
+        </aside>
 
-    <div class="surat-item">
-        <div class="item-row">
-            <span class="label">Nomor Surat</span>
-        </div>
+        <!-- CONTENT -->
+        <main class="content">
 
-        <div class="item-row">
-            <span class="label">Tanggal</span>
-        </div>
+            <div class="form-box">
+                <div class="form-title">SURAT MASUK</div>
 
-        <div class="item-row">
-            <span class="label">Pengirim</span>
-        </div>
+                <form onsubmit="return false;">
 
-        <div class="item-row">
-            <span class="label">Perihal</span>
-        </div>
-    </div>
+                    <label>Dari</label>
+                    <input type="text" id="asalSurat" placeholder="-" readonly>
 
-    <div class="lampiran-box">
-        <p>Lihat Lampiran (PDF)</p>
-    </div>
-</div>
-            <div class="card">
-                <h3>Informasi Surat</h3>
+                    <label>No Surat</label>
+                    <input type="text" id="noSurat" placeholder="-" readonly>
 
-                <div class="form-group">
-                    <label>Surat Masuk</label>
-                    <input type="text" placeholder="Nomor Surat">
+                    <label>Hal / Perihal</label>
+                    <input type="text" id="perihalSurat" placeholder="-" readonly>
+
+                    <label>Tanggal Surat</label>
+                    <input type="date" id="tanggalSurat" disabled>
+
+                </form>
+
+                <!-- Preview nama file PDF -->
+                <div class="preview-box" id="previewBox"></div>
+
+                <!-- Hanya tombol Kembali -->
+                <div class="button-row">
+                    <button type="button" class="upload-btn" id="btnKembali">Kembali</button>
                 </div>
 
-                <div class="form-group">
-                    <label>Diteruskan Ke</label>
-                    <select>
-                        <option>- Pilih -</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>Sifat</label>
-                    <select>
-                        <option>- Pilih -</option>
-                    </select>
-                </div>
             </div>
-        </div>
 
-        <!-- KOLOM KANAN -->
-        <div class="right-panel">
-            <div class="card">
-                <h3>Proses & Tanggapan</h3>
-
-                <div class="form-group">
-                    <label>Proses Lebih Lanjut</label>
-                    <textarea></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>Tanggapan dan Saran</label>
-                    <textarea></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>Catatan</label>
-                    <textarea></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>Koordinasi / Konfirmasi</label>
-                    <textarea></textarea>
-                </div>
-
-                <div>
-                    <label>Status</label>
-                </div>
-
-                <div class="button-group">
-                    <div class="left-buttons">
-                        <button class="btn-accept">Diterima</button>
-                    </div>
-
-                    <button class="btn-kembali" onclick="window.location.href='home.html'">
-                        ← Kembali
-                    </button>
-                </div>
-                
-            </div>
-        </div>
+        </main>
 
     </div>
-</div>
+
+    <!-- ALERT -->
+    <div id="customAlert" class="custom-alert" style="display:none;">
+        <div class="alert-box">
+            <p id="alertMessage"></p>
+            <button onclick="closeAlert()">OK</button>
+        </div>
+    </div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/detailmasuk.js"></script>
 
 </body>
+
 </html>

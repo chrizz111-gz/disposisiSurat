@@ -3,8 +3,6 @@ body {
     background-size: cover;
 }
 
-
-/* ================== HAMBURGER ================== */
 .hamburger {
     position: fixed;
     bottom: 20px;
@@ -19,28 +17,20 @@ body {
     font-weight: bold;
     z-index: 1000;
     cursor: pointer;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
     transition: 0.3s ease;
 }
 
-/* ================== SIDEBAR ================== */
-.sidebar {
-    top: 80px;
-}
 .sidebar {
     position: fixed;
-    top: 80px;                      /* 🔥 tinggi topbar */
+    top: 60px;
     left: 0;
-
     width: 280px;
-    height: calc(100vh - 80px);     /* 🔥 full sampai bawah */
-
+    height: calc(100vh - 60px);
     background: rgba(52, 130, 160, 0.95);
     padding: 25px 15px;
-
     backdrop-filter: blur(3px);
-    box-shadow: 3px 0 10px rgba(0,0,0,0.3);
-
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.3);
     transform: translateX(-100%);
     transition: transform 0.35s ease;
     z-index: 999;
@@ -54,8 +44,6 @@ body {
     transform: translateX(0);
 }
 
-
-/* Sidebar Button */
 .side-btn {
     width: 100%;
     padding: 12px 20px;
@@ -65,14 +53,16 @@ body {
     background: #6FBCE1;
     color: white;
     font-size: 18px;
+    font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 10px;
     white-space: nowrap;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     text-decoration: none;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .side-btn img {
@@ -80,9 +70,8 @@ body {
     flex-shrink: 0;
 }
 
-/* ================= CONTENT WRAPPER ================= */
 .wrapper {
-    margin-top: 70px; /* Turun karena topbar fixed */
+    margin-top: 70px;
     width: 100%;
     min-height: calc(100vh - 70px);
     display: flex;
@@ -90,7 +79,6 @@ body {
     padding: 40px;
 }
 
-/* ================= FORM BOX ================= */
 .form-box {
     position: relative;
     width: 850px;
@@ -117,7 +105,6 @@ body {
     z-index: 1;
 }
 
-/* ================= FORM TITLE ================= */
 .form-title {
     background: #0094FF;
     color: white;
@@ -125,17 +112,13 @@ body {
     border-radius: 6px;
     font-weight: bold;
     font-size: 16px;
-
     position: absolute;
-    top: 10px;                /* dari -15px → turun ke bawah */
-    left: 85%;              /* geser sedikit ke kanan */
+    top: 10px;
+    left: 85%;
     transform: translateX(-50%);
-
     width: max-content;
 }
 
-
-/* ================= FORM ================= */
 form {
     width: 55%;
     float: left;
@@ -153,25 +136,72 @@ input {
     padding: 12px 15px;
     border: 2px solid white;
     border-radius: 10px;
-    background: rgba(255,255,255,0.85);
+    background: rgba(255, 255, 255, 0.85);
     font-size: 15px;
     outline: none;
 }
 
-.preview-box {
-    width: 40%;
-    height: 280px;
-    float: right;
-    margin-top: 60px;
-    background: #ddd;
-    border-radius: 5px;
+input[readonly],
+input[disabled] {
+    background: rgba(255, 255, 255, 0.6);
+    color: #333;
+    cursor: default;
 }
 
-/* ================= BUTTONS ================= */
+/* ================== PREVIEW BOX (DIPERBAIKI) ================== */
+.preview-box {
+    width: 38%;
+    height: 240px;
+    float: right;
+    margin-top: 50px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
+    border: 2px dashed rgba(255, 255, 255, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: white;
+    font-size: 13px;
+    text-align: center;
+    padding: 15px;
+    transition: background 0.3s;
+}
+
+.preview-box:empty::before {
+    content: "📄";
+    font-size: 48px;
+    display: block;
+}
+
+.preview-box:empty::after {
+    content: "File PDF akan ditampilkan di sini";
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.85);
+    display: block;
+    margin-top: 8px;
+}
+
+.preview-box .file-name {
+    font-weight: bold;
+    font-size: 14px;
+    word-break: break-all;
+    color: white;
+}
+
+.preview-box .file-icon {
+    font-size: 52px;
+}
+
+/* ================== BUTTONS ================== */
 .button-row {
     clear: both;
     padding-top: 30px;
     text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
 }
 
 .upload-btn,
@@ -182,70 +212,19 @@ input {
     font-size: 16px;
     color: white;
     cursor: pointer;
+    transition: transform 0.2s, filter 0.2s;
 }
 
-.upload-btn { background: #4cd137; }
-.submit-btn { background: #0a57c7; }
-
-.sidebar {
-    position: fixed;
-    top: 60px;                      /* ✅ samakan dengan topbar */
-    left: 0;
-
-    width: 280px;
-    height: calc(100vh - 60px);     /* ✅ samakan juga */
-
-    background: rgba(52, 130, 160, 0.95);
-    padding: 25px 15px;
-
-    backdrop-filter: blur(3px);
-    box-shadow: 3px 0 10px rgba(0,0,0,0.3);
-
-    transform: translateX(-100%);
-    transition: transform 0.35s ease;
-    z-index: 999;
+.upload-btn:hover,
+.submit-btn:hover {
+    transform: scale(1.04);
+    filter: brightness(1.1);
 }
 
-.sidebar.hidden {
-    transform: translateX(-100%);
+.upload-btn {
+    background: #4cd137;
 }
 
-.sidebar:not(.hidden) {
-    transform: translateX(0);
-}
-
-
-/* Sidebar Button */
-.side-btn {
-    width: 100%;
-    padding: 12px 20px;
-    margin-bottom: 15px;
-    border: none;
-    border-radius: 14px;
-    background: #6FBCE1;
-    color: white;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    white-space: nowrap;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.side-btn img {
-    width: 30px;
-    flex-shrink: 0;
-}
-
-.side-btn {
-    font-weight: 600;
-
-    text-shadow:
-        -1px -1px 0 #000,
-         1px -1px 0 #000,
-        -1px  1px 0 #000,
-         1px  1px 0 #000;
+.submit-btn {
+    background: #0a57c7;
 }

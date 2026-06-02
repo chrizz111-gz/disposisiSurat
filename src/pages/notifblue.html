@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,13 @@
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/notifblue.css">
 </head>
+
 <body>
 
-    <header class="topbar">
-        <img src="../assets/logo.png" class="logo" alt="Logo">
-        <h2>DISPOSISI SURAT</h2>
-    </header>
+  <header class="topbar">
+    <img src="../assets/logo.png" class="logo" alt="Logo">
+    <h2>DISPOSISI SURAT</h2>
+  </header>
 
   <section class="container">
     <div class="success-card">
@@ -27,21 +29,31 @@
 
       <h1>Surat berhasil dikirim</h1>
 
-        <p class="desc">
-            Disposisi telah diteruskan ke Kepala
-            Sekolah. Status Saat Ini Menunggu
-            Konfirmasi Dari Penerima
-        </p>
+      <p class="desc" id="notifDesc">
+        Disposisi telah diteruskan ke Kepala
+        Sekolah. Status Saat Ini Menunggu
+        Konfirmasi Dari Penerima
+      </p>
 
-      <button class="login-btn">
+      <button class="login-btn" id="btnKembali" onclick="window.location.href='home.html'">
         Kembali
       </button>
-
-
-</a>
 
     </div>
   </section>
 
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const tipe = params.get("tipe");
+
+    if (tipe === "teruskan") {
+      document.querySelector("h1").textContent = "Surat berhasil diteruskan";
+      document.getElementById("notifDesc").textContent =
+        "Surat telah diteruskan ke penerima. Surat akan tersimpan di riwayat.";
+    }
+    // default: teks asli untuk TU kirim ke Kepsek
+  </script>
+
 </body>
+
 </html>

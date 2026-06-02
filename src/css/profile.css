@@ -1,10 +1,12 @@
 .wrapper {
-    margin-top: 60px; /* 🔥 samakan dengan tinggi topbar kamu */
+    margin-top: 60px;
+    /* 🔥 samakan dengan tinggi topbar kamu */
     width: 100%;
     min-height: calc(100vh - 60px);
 
     background: url("../assets/beranda.png") center / cover no-repeat;
-    background-attachment: fixed; /* 🔥 biar smooth */
+    background-attachment: fixed;
+    /* 🔥 biar smooth */
 
     display: flex;
 }
@@ -24,23 +26,25 @@
     font-weight: bold;
     z-index: 1000;
     cursor: pointer;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
     transition: 0.3s ease;
 }
 
 .sidebar {
     position: fixed;
-    top: 60px;                      /* ✅ samakan dengan topbar */
+    top: 60px;
+    /* ✅ samakan dengan topbar */
     left: 0;
 
     width: 280px;
-    height: calc(100vh - 60px);     /* ✅ samakan juga */
+    height: calc(100vh - 60px);
+    /* ✅ samakan juga */
 
     background: rgba(52, 130, 160, 0.95);
     padding: 25px 15px;
 
     backdrop-filter: blur(3px);
-    box-shadow: 3px 0 10px rgba(0,0,0,0.3);
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.3);
 
     transform: translateX(-100%);
     transition: transform 0.35s ease;
@@ -71,7 +75,7 @@
     justify-content: space-between;
     gap: 10px;
     white-space: nowrap;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     text-decoration: none;
 }
@@ -80,9 +84,11 @@
     width: 30px;
     flex-shrink: 0;
 }
+
 .profile-container {
     width: 95%;
-    max-width: 600px; /* 🔥 lebih gede dari login */
+    max-width: 600px;
+    /* 🔥 lebih gede dari login */
     margin: 40px auto;
     padding: 40px 35px;
 
@@ -94,7 +100,7 @@
     backdrop-filter: blur(10px);
 
     border-radius: 25px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
 /* FOTO */
@@ -107,7 +113,8 @@
     height: 110px;
     border-radius: 50%;
 
-    background: rgba(255,255,255,0.2); /* 🔥 transparan */
+    background: rgba(255, 255, 255, 0.2);
+    /* 🔥 transparan */
     color: white;
 
     display: flex;
@@ -116,21 +123,25 @@
     font-size: 45px;
     margin: auto;
 
-    border: 2px solid rgba(255,255,255,0.5);
+    border: 2px solid rgba(255, 255, 255, 0.5);
 }
+
 .btn-edit {
     margin-top: 12px;
     padding: 8px 16px;
     border: none;
-    background: #2f6fa1; /* 🔥 sama input login */
+    background: #2f6fa1;
+    /* 🔥 sama input login */
     color: white;
     border-radius: 20px;
     cursor: pointer;
     font-size: 14px;
 }
+
 /* CARD */
 .profile-card {
-    background: transparent; /* 🔥 hapus putih */
+    background: transparent;
+    /* 🔥 hapus putih */
     padding: 0;
     box-shadow: none;
 }
@@ -164,7 +175,8 @@
     width: 100%;
     padding: 12px;
     border: none;
-    background: #5aa6d9; /* 🔥 sama login */
+    background: #5aa6d9;
+    /* 🔥 sama login */
     color: white;
     border-radius: 10px;
     cursor: pointer;
@@ -184,4 +196,113 @@
 
 .btn-link:hover {
     text-decoration: underline;
+}
+
+/* LOGOUT BUTTON */
+.btn-logout {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #e05555;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.2s ease;
+}
+
+.btn-logout:hover {
+    background: #c03a3a;
+}
+
+/* GANTI PASSWORD BUTTON */
+.btn-link {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    padding: 12px;
+    background: #2B6F8B;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.2s ease;
+}
+
+.btn-link:hover {
+    background: #1e5570;
+    text-decoration: none;
+}
+
+/* LOGOUT BUTTON */
+.btn-logout {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #e05555;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.2s ease;
+}
+
+.btn-logout:hover {
+    background: #c03a3a;
+}
+
+/* GANTI PASSWORD BUTTON */
+.btn-link {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    padding: 12px;
+    background: #2B6F8B;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.2s ease;
+}
+
+.btn-link:hover {
+    background: #1e5570;
+    text-decoration: none;
+}
+
+/* JABATAN SELECT */
+.input-select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-top: 5px;
+    font-size: 14px;
+    background: white;
+    cursor: pointer;
+}
+
+/* GANTI JABATAN BUTTON */
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #2B6F8B;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.2s ease;
+}
+
+.btn-primary:hover {
+    background: #1e5570;
 }

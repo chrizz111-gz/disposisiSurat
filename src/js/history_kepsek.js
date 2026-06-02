@@ -1,7 +1,10 @@
-// history.js — Riwayat surat untuk Admin/Pegawai TU
+// history_kepsek.js — Riwayat surat untuk Kepala Sekolah
 (function () {
     const user = getUser();
     if (!user) { window.location.href = "login.html"; return; }
+
+    const aktif = getActiveJabatan().toLowerCase();
+    if (aktif !== "kepala sekolah") { window.location.href = "login.html"; return; }
 
     const tbody = document.getElementById("tableBody");
     let allData = [];
@@ -64,11 +67,11 @@
                 const id = btn.dataset.id;
                 localStorage.setItem("selectedSuratId", id);
                 localStorage.setItem("selectedSuratType", jenis);
-                localStorage.setItem("fromHistory", "true"); // ← tambah ini
+                localStorage.setItem("fromHistory", "true");
                 if (jenis === "masuk") {
-                    window.location.href = "output_disposisi_masuk.html";
+                    window.location.href = "detail_kepsek.html";
                 } else {
-                    window.location.href = "output_disposisi_keluar.html";
+                    window.location.href = "detail_kepsek_keluar.html"; // atau halaman detail keluar
                 }
             });
         });
@@ -85,13 +88,13 @@
     });
 
     // Filter status
-    document.getElementById("filterStatus").addEventListener("change", e => {
+    document.getElementById("filterStatus")?.addEventListener("change", e => {
         activeStatus = e.target.value;
         renderTable();
     });
 
     // Search
-    document.querySelector(".search").addEventListener("input", e => {
+    document.querySelector(".search")?.addEventListener("input", e => {
         searchQuery = e.target.value.trim();
         renderTable();
     });
@@ -99,43 +102,66 @@
     async function loadHistory() {
         tbody.innerHTML = `<tr><td colspan="9" style="text-align:center;padding:1rem">Memuat...</td></tr>`;
         try {
-            const [resMasuk, resKeluar] = await Promise.all([
-                apiListSuratMasuk(),
+            const [resDisposisi, resKeluar] = await Promise.all([
+                apiListDisposisi(),
                 apiListSuratKeluar()
             ]);
 
-            const dataMasuk = resMasuk?.ok ? (await resMasuk.json()).data || [] : [];
+            const dataDisposisi = resDisposisi?.ok ? (await resDisposisi.json()).data || [] : [];
             const dataKeluar = resKeluar?.ok ? (await resKeluar.json()).data || [] : [];
 
-            // Surat masuk: masuk history kalau sudah diteruskan atau selesai
-            const masuk = dataMasuk
-                .filter(s => ["diteruskan", "selesai"].includes(s.status_alur))
-                .map(s => ({
-                    jenis: "masuk",
-                    id: s.id_surat_masuk || s.id,
-                    no_surat: s.no_surat,
-                    perihal: s.perihal_surat,
-                    asal: s.asal_surat,
-                    tanggal: s.created_at,
-                    status: s.status_verifikasi || "menunggu",
-                    statusLabel: s.status_verifikasi === "disetujui" ? "Disetujui" :
-                        s.status_verifikasi === "ditolak" ? "Ditolak" : "Diproses"
-                }));
+            // === SURAT MASUK (via disposisi) ===
+            const masuk = dataDisposisi
+                .filter(d => {
+                    // Cek apakah disposisi ini untuk kepsek
+                    const isForKepsek = d.id_kepsek === user.id ||
+                        (d.distribusi || []).some(dist => {
+                            const jabatan = (dist.jabatan?.nama_jabatan || dist.jabatan || "").toLowerCase();
+                            return jabatan === "kepala sekolah";
+                        });
+                    return isForKepsek;
+                })
+                .map(d => {
+                    const surat = d.surat_masuk || {};
+                    const status = d.status_kepsek || d.status || "menunggu";
+                    return {
+                        jenis: "masuk",
+                        id: d.id_surat_masuk || surat.id,
+                        no_surat: surat.no_surat,
+                        perihal: surat.perihal_surat,
+                        asal: surat.asal_surat,
+                        tanggal: d.created_at || surat.created_at,
+                        status: status,
+                        statusLabel: status === "disetujui" ? "Disetujui" :
+                            status === "ditolak" ? "Ditolak" : "Menunggu"
+                    };
+                });
 
-            // Surat keluar: masuk history kalau sudah selesai (TU sudah lihat)
+            // === SURAT KELUAR (yang perlu approval kepsek) ===
             const keluar = dataKeluar
-                .filter(s => s.status_alur === "selesai")
-                .map(s => ({
-                    jenis: "keluar",
-                    id: s.id_surat_keluar || s.id,
-                    no_surat: s.no_surat,
-                    perihal: s.perihal,
-                    asal: s.tujuan || "-",
-                    tanggal: s.created_at,
-                    status: s.status_verifikasi || "menunggu",
-                    statusLabel: s.status_verifikasi === "disetujui" ? "Disetujui" :
-                        s.status_verifikasi === "ditolak" ? "Ditolak" : "Diproses"
-                }));
+                .filter(s => {
+                    // Surat keluar yang statusnya butuh approval kepsek
+                    // Atau yang sudah di-approve/ditolak oleh kepsek
+                    const status = (s.status_verifikasi || "").toLowerCase();
+                    const alur = (s.status_alur || "").toLowerCase();
+                    // Kepsek handle surat keluar yang menunggu persetujuan atau sudah diproses
+                    return ["menunggu", "disetujui", "ditolak"].includes(status) ||
+                        ["diproses", "selesai"].includes(alur);
+                })
+                .map(s => {
+                    const status = (s.status_verifikasi || "menunggu").toLowerCase();
+                    return {
+                        jenis: "keluar",
+                        id: s.id_surat_keluar || s.id,
+                        no_surat: s.no_surat,
+                        perihal: s.perihal,
+                        asal: s.tujuan || s.asal || "Internal",
+                        tanggal: s.created_at,
+                        status: status,
+                        statusLabel: status === "disetujui" ? "Disetujui" :
+                            status === "ditolak" ? "Ditolak" : "Menunggu"
+                    };
+                });
 
             allData = [...masuk, ...keluar].sort((a, b) => new Date(b.tanggal) - new Date(a.tanggal));
             renderTable();

@@ -1,99 +1,110 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
-    <title>Profil</title>
+    <title>Profil Admin</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/home.css"> <!-- 🔥 pakai ini -->
+    <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/profile.css">
 </head>
 
 <body>
 
-    <!-- TOPBAR -->
     <header class="topbar">
         <img src="../assets/logo.png" class="logo">
         <h2>DISPOSISI SURAT</h2>
     </header>
 
-    <!-- ================= HAMBURGER ================= -->
-    <button id="toggleSidebar" class="hamburger" aria-label="Toggle Sidebar">
-        III
-    </button>
+    <button id="toggleSidebar" class="hamburger" aria-label="Toggle Sidebar">III</button>
 
-    <!-- WRAPPER -->
     <div class="wrapper">
 
-        <!-- SIDEBAR (COPY DARI HOMEPAGE) -->
         <aside id="sidebar" class="sidebar hidden">
-            <a href="home.html" class="side-btn">
-                BERANDA <img src="../assets/home.png">
-            </a>
-
-            <a href="profile.html" class="side-btn">
-                PENGGUNA <img src="../assets/user.png">
-            </a>
-
-            <a href="suratmasuk.html" class="side-btn">
-                SURAT MASUK <img src="../assets/in.png">
-            </a>
-
-            <a href="suratkeluar.html" class="side-btn">
-                SURAT KELUAR <img src="../assets/out.png">
-            </a>
-
-            <a href="history.html" class="side-btn">
-                RIWAYAT <img src="../assets/history.png">
-            </a>
-
-            <a href="usermanage.html" class="side-btn">
-                PERSETUJUAN AKUN <img src="../assets/users.png">
-            </a>
+            <a href="home.html" class="side-btn">BERANDA <img src="../assets/home.png"></a>
+            <a href="profile.html" class="side-btn">PENGGUNA <img src="../assets/user.png"></a>
+            <a href="suratmasuk.html" class="side-btn">SURAT MASUK <img src="../assets/in.png"></a>
+            <a href="suratkeluar.html" class="side-btn">SURAT KELUAR <img src="../assets/out.png"></a>
+            <a href="history.html" class="side-btn">RIWAYAT <img src="../assets/history.png"></a>
+            <a href="usermanage.html" class="side-btn">PERSETUJUAN AKUN <img src="../assets/users.png"></a>
         </aside>
 
-        <!-- CONTENT -->
         <main class="content">
 
             <div class="profile-container">
 
-                <!-- FOTO -->
                 <div class="profile-photo">
                     <div class="photo-circle">👤</div>
                 </div>
 
-                <!-- CARD -->
                 <div class="profile-card">
                     <h3>Informasi Profil</h3>
 
                     <div class="form-group">
                         <label>Nama</label>
-                        <input type="text" id="nama" value="Frncs">
+                        <input type="text" id="nama" readonly>
                     </div>
 
                     <div class="form-group">
                         <label>Email</label>
-                        <input type="email" id="email" value="frncs@email.com">
+                        <input type="email" id="email" readonly>
                     </div>
 
+                    <!-- Jabatan: readonly (sama seperti user) -->
                     <div class="form-group">
                         <label>Jabatan</label>
-                        <input type="jbtn" id="jbtn" value="Tata Usaha">
+                        <input type="text" id="jabatanStatic" readonly>
                     </div>
 
+                    <a href="gantipass.html" class="btn-link">Ganti Password</a>
 
-                    <a href="gantipass.html" class="btn-link">
-                        Ganti Password
-                    </a>
+                    <button class="btn-logout" id="btnLogout">Keluar</button>
                 </div>
 
             </div>
 
         </main>
-
     </div>
 
-    <!-- SCRIPT SIDEBAR -->
+    <div id="customAlert" class="custom-alert" style="display:none;">
+        <div class="alert-box">
+            <p id="alertMessage"></p>
+            <button onclick="closeAlertProfile()">OK</button>
+        </div>
+    </div>
+
+    <script src="../js/api.js"></script>
     <script src="../js/sidebar.js"></script>
+    <script>
+        (function () {
+            const user = getUser();
+            if (!user) { window.location.href = "login.html"; return; }
+
+            document.getElementById("nama").value = user.name || "-";
+            document.getElementById("email").value = user.email || "-";
+
+            // Tampilkan jabatan sebagai teks readonly (sama seperti user)
+            const jabatans = user.jabatans || [];
+            const jabatanText = jabatans
+                .map(j => j.toUpperCase())
+                .join(" / ");
+            document.getElementById("jabatanStatic").value = jabatanText || "-";
+
+            let redirectUrl = "";
+            function showAlertProfile(msg, url = "") {
+                document.getElementById("alertMessage").innerText = msg;
+                document.getElementById("customAlert").style.display = "flex";
+                redirectUrl = url;
+            }
+            window.closeAlertProfile = function () {
+                document.getElementById("customAlert").style.display = "none";
+                if (redirectUrl) window.location.href = redirectUrl;
+            };
+
+            document.getElementById("btnLogout").addEventListener("click", () => logout());
+        })();
+    </script>
 
 </body>
+
 </html>

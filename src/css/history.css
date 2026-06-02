@@ -1,8 +1,10 @@
 body {
     background: url("../assets/IMG_0411.PNG") no-repeat center center;
     background-size: cover;
-    background-attachment: fixed; /* optional biar ada efek halus */
+    background-attachment: fixed;
+    /* optional biar ada efek halus */
 }
+
 /* CONTAINER */
 .history-container {
     padding: 110px 30px 30px 30px;
@@ -54,11 +56,11 @@ body {
 
 /* TABLE CARD */
 .table-card {
-    background: rgba(255,255,255,0.8);
+    background: rgba(255, 255, 255, 0.8);
     border-radius: 15px;
     padding: 15px;
     backdrop-filter: blur(6px);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
 /* TABLE */
@@ -72,7 +74,8 @@ thead {
     color: white;
 }
 
-th, td {
+th,
+td {
     padding: 12px;
     text-align: center;
 }
@@ -83,7 +86,7 @@ tbody tr {
 }
 
 tbody tr:hover {
-    background: rgba(43,111,139,0.1);
+    background: rgba(43, 111, 139, 0.1);
 }
 
 /* STATUS */
@@ -138,24 +141,26 @@ tbody tr:hover {
     font-weight: bold;
     z-index: 1000;
     cursor: pointer;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
     transition: 0.3s ease;
 }
 
 /* ================= SIDEBAR ================= */
 .sidebar {
     position: fixed;
-    top: 60px;                      /* ✅ samakan dengan topbar */
+    top: 60px;
+    /* ✅ samakan dengan topbar */
     left: 0;
 
     width: 280px;
-    height: calc(100vh - 60px);     /* ✅ samakan juga */
+    height: calc(100vh - 60px);
+    /* ✅ samakan juga */
 
     background: rgba(52, 130, 160, 0.95);
     padding: 25px 15px;
 
     backdrop-filter: blur(3px);
-    box-shadow: 3px 0 10px rgba(0,0,0,0.3);
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.3);
 
     transform: translateX(-100%);
     transition: transform 0.35s ease;
@@ -186,7 +191,7 @@ tbody tr:hover {
     justify-content: space-between;
     gap: 10px;
     white-space: nowrap;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     text-decoration: none;
 }
@@ -201,9 +206,9 @@ tbody tr:hover {
 
     text-shadow:
         -1px -1px 0 #000,
-         1px -1px 0 #000,
-        -1px  1px 0 #000,
-         1px  1px 0 #000;
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
 }
 
 /* Sidebar Button */
@@ -221,7 +226,7 @@ tbody tr:hover {
     justify-content: space-between;
     gap: 10px;
     white-space: nowrap;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     text-decoration: none;
 }
@@ -229,4 +234,26 @@ tbody tr:hover {
 .side-btn img {
     width: 30px;
     flex-shrink: 0;
+}
+
+/* Badge jabatan di table */
+.jabatan-tags {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.jabatan-tags::before {
+    content: attr(data-label);
+}
+
+/* Atau pakai style simple */
+td .jabatan-tags {
+    font-size: 12px;
+    font-weight: 600;
+    color: #2B6F8B;
+    background: rgba(43, 111, 139, 0.15);
+    padding: 3px 10px;
+    border-radius: 12px;
+    white-space: nowrap;
 }

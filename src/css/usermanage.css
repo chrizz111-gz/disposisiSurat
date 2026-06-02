@@ -1,227 +1,324 @@
-/* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Segoe UI, Arial, sans-serif;
+/* ============================================= */
+/* usermanage.css — Manajemen Akun (Final)       */
+/* ============================================= */
+.wrapper.manage-bg {
+    /* GANTI NAMA FILE INI */
+    background: url("../assets/IMG_0411.PNG") center / cover no-repeat;
+    background-attachment: fixed;
 }
 
-/* BACKGROUND */
-body {
-    background: url("../assets/IMG_0411.PNG") no-repeat center;
-    background-size: cover;
-    min-height: 100vh;
-}
-
-/* CONTAINER */
-.approval-container {
-    padding: 40px;
-}
-
-/* TITLE */
-.page-title {
-    text-align: center;
-    font-size: 40px;
-    font-weight: 700;
-    margin-top: 70px;
-    margin-bottom: 30px;
-    color: #2d2d2d;
-}
-
-/* LIST */
-.approval-list {
+/* Content area */
+.content {
+    flex: 1;
+    padding: 30px 40px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    transition: margin-left 0.35s ease;
+    align-items: center;
+    /* Card di tengah */
 }
 
-/* CARD */
-.approval-card {
+/* Kalau sidebar terbuka */
+.sidebar:not(.hidden)~.content {
+    margin-left: 280px;
+}
+
+.sidebar.hidden~.content {
+    margin-left: 0;
+}
+
+/* ================== HEADER ================== */
+.manage-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 25px;
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 900px;
+    /* Batasi lebar maksimal */
+    gap: 20px;
+    /* Jarak antara title dan search */
+}
 
-    padding: 20px 25px;
+.page-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2d2d2d;
+    margin: 0;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+/* ================== SEARCH BOX ================== */
+.search-box {
+    padding: 12px 20px 12px 45px;
+    border-radius: 25px;
+    border: none;
+    font-size: 14px;
+    width: 280px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+    outline: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/vg' width='16' height='16' fill='%23999' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 18px center;
+    background-size: 16px;
+    transition: 0.2s;
+    flex-shrink: 0;
+}
+
+.search-box:focus {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    background: white;
+}
+
+.search-box::placeholder {
+    color: #aaa;
+}
+
+/* ================== LIST (SCROLLABLE) ================== */
+.manage-list {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 5px 0;
+    min-height: 0;
+    width: 100%;
+    max-width: 900px;
+    /* Samakan dengan header */
+    align-items: center;
+}
+
+/* Scrollbar */
+.manage-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.manage-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.manage-list::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+
+.manage-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+/* ================== CARD ================== */
+.user-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 25px;
     border-radius: 18px;
-
-    background: rgba(255,255,255,0.75);
+    background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(10px);
-
-    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.6);
     transition: 0.25s ease;
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 900px;
 }
 
-.approval-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 22px rgba(0,0,0,0.2);
+.user-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
-/* USER */
+/* ================== USER INFO ================== */
 .user-info {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.user-avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #e0e5e9, #c5ccd3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.3;
+}
+
+.user-role {
+    font-size: 14px;
+    color: #8b95a5;
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+/* ================== ACTIONS ================== */
+.user-actions {
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
-.avatar {
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    background: linear-gradient(145deg, #dfe6e9, #b2bec3);
-}
-
-/* TEXT */
-.name {
-    font-size: 18px;
-    font-weight: 600;
-    color: #2d2d2d;
-}
-
-.role {
+/* Dropdown Jabatan */
+.jabatan-display {
+    padding: 10px 18px;
+    border-radius: 25px;
+    border: 1.5px solid #d0d5dd;
     font-size: 14px;
-    color: #6c757d;
+    font-weight: 500;
+    color: #2d2d2d;
+    background: white;
+    min-width: 170px;
+    text-align: center;
 }
 
-/* ACTION */
-.actions {
+/* Tombol Hapus */
+.btn-hapus {
     display: flex;
-    gap: 10px;
-}
-
-/* BUTTON ACCEPT */
-.btn-accept {
-    background: #2ecc71;
-    color: white;
-    border: none;
-    padding: 8px 18px;
-    border-radius: 20px;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: #e74c3c;
+    border: 2px solid #e74c3c;
+    padding: 10px 22px;
+    border-radius: 25px;
     cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
     transition: 0.25s;
+    white-space: nowrap;
 }
 
-.btn-accept:hover {
-    background: #27ae60;
-}
-
-/* BUTTON REJECT */
-.btn-reject {
+.btn-hapus:hover {
     background: #e74c3c;
     color: white;
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+}
+
+/* ================== FOOTER ================== */
+.manage-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    padding-top: 25px;
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 900px;
+}
+
+/* Tombol Riwayat Aktivitas */
+.btn-log {
+    padding: 14px 32px;
+    /* Lebih besar */
     border: none;
-    padding: 8px 18px;
-    border-radius: 20px;
+    border-radius: 12px;
+    background: #6FBCE1;
+    color: white;
+    font-size: 16px;
+    /* Lebih besar */
+    font-weight: 600;
     cursor: pointer;
-    transition: 0.25s;
+    transition: 0.2s;
+    box-shadow: 0 4px 12px rgba(111, 188, 225, 0.3);
+    min-width: 180px;
+    /* Lebar minimal */
+    text-align: center;
 }
 
-.btn-reject:hover {
-    background: #c0392b;
+.btn-log:hover {
+    background: #5aadd4;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(111, 188, 225, 0.4);
 }
 
-/* ================= HAMBURGER ================= */
-.hamburger {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    width: 55px;
-    height: 55px;
+/* Tombol Tambah Akun */
+.btn-tambah {
+    padding: 14px 32px;
+    /* Lebih besar */
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     background: #2B6F8B;
     color: white;
-    font-size: 20px;
-    font-weight: bold;
-    z-index: 1000;
-    cursor: pointer;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
-    transition: 0.3s ease;
-}
-
-/* ================= SIDEBAR ================= */
-.sidebar {
-    position: fixed;
-    top: 60px;                      /* ✅ samakan dengan topbar */
-    left: 0;
-
-    width: 280px;
-    height: calc(100vh - 60px);     /* ✅ samakan juga */
-
-    background: rgba(52, 130, 160, 0.95);
-    padding: 25px 15px;
-
-    backdrop-filter: blur(3px);
-    box-shadow: 3px 0 10px rgba(0,0,0,0.3);
-
-    transform: translateX(-100%);
-    transition: transform 0.35s ease;
-    z-index: 999;
-}
-
-.sidebar.hidden {
-    transform: translateX(-100%);
-}
-
-.sidebar:not(.hidden) {
-    transform: translateX(0);
-}
-
-
-/* Sidebar Button */
-.side-btn {
-    width: 100%;
-    padding: 12px 20px;
-    margin-bottom: 15px;
-    border: none;
-    border-radius: 14px;
-    background: #6FBCE1;
-    color: white;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    white-space: nowrap;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.side-btn img {
-    width: 30px;
-    flex-shrink: 0;
-}
-
-.side-btn {
+    font-size: 16px;
+    /* Lebih besar */
     font-weight: 600;
-
-    text-shadow:
-        -1px -1px 0 #000,
-         1px -1px 0 #000,
-        -1px  1px 0 #000,
-         1px  1px 0 #000;
-}
-
-/* Sidebar Button */
-.side-btn {
-    width: 100%;
-    padding: 12px 20px;
-    margin-bottom: 15px;
-    border: none;
-    border-radius: 14px;
-    background: #6FBCE1;
-    color: white;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    white-space: nowrap;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
     cursor: pointer;
-    text-decoration: none;
+    transition: 0.2s;
+    box-shadow: 0 4px 12px rgba(43, 111, 139, 0.3);
+    min-width: 180px;
+    /* Lebar minimal */
+    text-align: center;
 }
 
-.side-btn img {
-    width: 30px;
-    flex-shrink: 0;
+.btn-tambah:hover {
+    background: #245d75;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(43, 111, 139, 0.4);
+}
+
+/* ================== EMPTY STATE ================== */
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #6c757d;
+    font-size: 16px;
+}
+
+.loading-text {
+    text-align: center;
+    padding: 40px 20px;
+    color: #6c757d;
+    font-size: 16px;
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 768px) {
+    .content {
+        padding: 20px;
+    }
+
+    .manage-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .user-card {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+
+    .user-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .manage-footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-log,
+    .btn-tambah {
+        width: 100%;
+    }
 }

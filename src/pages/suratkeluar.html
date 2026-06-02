@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <title>Surat Keluar</title>
@@ -9,79 +10,87 @@
 
 <body>
 
-    <!-- ================= HAMBURGER ================= -->
+    <!-- HAMBURGER -->
     <button id="toggleSidebar" class="hamburger" aria-label="Toggle Sidebar">
         III
     </button>
 
-    <!-- ================= SIDEBAR ================= -->
+    <!-- SIDEBAR -->
     <aside id="sidebar" class="sidebar hidden">
-            <a href="home.html" class="side-btn">
-                BERANDA <img src="../assets/home.png" alt="">
-            </a>
+        <a href="home.html" class="side-btn">
+            BERANDA <img src="../assets/home.png" alt="">
+        </a>
+        <a href="profile.html" class="side-btn">
+            PENGGUNA <img src="../assets/user.png" alt="">
+        </a>
+        <a href="suratmasuk.html" class="side-btn">
+            SURAT MASUK <img src="../assets/in.png" alt="">
+        </a>
+        <a href="suratkeluar.html" class="side-btn">
+            SURAT KELUAR <img src="../assets/out.png" alt="">
+        </a>
+        <a href="history.html" class="side-btn">
+            RIWAYAT <img src="../assets/history.png" alt="">
+        </a>
+        <a href="usermanage.html" class="side-btn">
+            PERSETUJUAN AKUN <img src="../assets/users.png" alt="">
+        </a>
+    </aside>
 
-            <a href="profile.html" class="side-btn">
-                PENGGUNA <img src="../assets/user.png" alt="">
-            </a>
-
-            <a href="suratmasuk.html" class="side-btn">
-                SURAT MASUK <img src="../assets/in.png" alt="">
-            </a>
-
-            <a href="suratkeluar.html" class="side-btn">
-                SURAT KELUAR <img src="../assets/out.png" alt="">
-            </a>
-
-            <a href="history.html" class="side-btn">
-                RIWAYAT <img src="../assets/history.png" alt="">
-            </a>
-
-            <a href="usermanage.html" class="side-btn">
-                PERSETUJUAN AKUN <img src="../assets/users.png" alt="">
-            </a>
-        </aside>
-
-    <!-- ================= TOPBAR ================= -->
+    <!-- TOPBAR -->
     <header class="topbar">
         <img src="../assets/logo.png" class="logo">
         <h2>DISPOSISI SURAT</h2>
     </header>
 
-    <!-- ================= CONTENT WRAPPER ================= -->
-<div class="wrapper">
-    <div class="container">
+    <!-- CONTENT WRAPPER -->
+    <div class="wrapper">
         <div class="form-box">
             <div class="form-title">SURAT KELUAR</div>
 
-            <form>
-                <label>Dari</label>
-                <input type="text" placeholder="Masukkan Pengirim Surat">
+            <form onsubmit="return false;">
+                <label>Tujuan</label>
+                <input type="text" id="tujuanSurat" placeholder="Masukkan Tujuan Surat">
 
                 <label>Kode</label>
-                <input type="text" placeholder="Masukkan Kode Surat">
+                <input type="text" id="kodeSurat" placeholder="Masukkan Kode Surat">
 
                 <label>No Surat</label>
-                <input type="text" placeholder="Masukkan nomor surat">
+                <input type="text" id="noSurat" placeholder="Masukkan Nomor Surat">
 
-                <label>Hal</label>
-                <input type="text" placeholder="Masukkan Hal Surat">
+                <label>Hal / Perihal</label>
+                <input type="text" id="perihalSurat" placeholder="Masukkan Hal Surat">
 
-                <label>Tanggal</label>
-                <input type="text" placeholder="Masukkan Tanggal pengajuan">
+                <label>Tanggal Surat</label>
+                <input type="date" id="tanggalSurat">
             </form>
 
+            <!-- Input file tersembunyi -->
+            <input type="file" id="fileSurat" accept=".pdf" style="display:none;">
+
+            <!-- Preview file -->
             <div class="preview-box"></div>
 
             <div class="button-row">
-                    <button type="button" class="upload-btn">Upload</button>
-                    <a href="notiforange.html"> <button class="submit-btn">Submit</button></a>
-                </div>
+                <button type="button" class="upload-btn" id="btnUpload">Upload PDF</button>
+                <button type="button" class="submit-btn" id="btnSubmit">Submit</button>
+            </div>
 
         </div>
     </div>
-</div>
 
+    <!-- ALERT -->
+    <div id="customAlert" class="custom-alert" style="display:none;">
+        <div class="alert-box">
+            <p id="alertMessage"></p>
+            <button onclick="closeAlert()">OK</button>
+        </div>
+    </div>
 
+    <script src="../js/api.js"></script>
     <script src="../js/sidebar.js"></script>
+    <script src="../js/suratkeluar.js"></script>
+
 </body>
+
 </html>

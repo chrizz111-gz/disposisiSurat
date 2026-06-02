@@ -1,11 +1,13 @@
 /* ================== WRAPPER ================== */
 .wrapper {
-    margin-top: 60px; /* ✅ samakan semua page */
+    margin-top: 60px;
+    /* ✅ samakan semua page */
     width: 100%;
     min-height: calc(100vh - 60px);
 
     background: url("../assets/beranda.png") center / cover no-repeat;
-    background-attachment: fixed; /* 🔥 tambahin ini biar sama kayak profile */
+    background-attachment: fixed;
+    /* 🔥 tambahin ini biar sama kayak profile */
 
     display: flex;
 }
@@ -25,24 +27,26 @@
     font-weight: bold;
     z-index: 1000;
     cursor: pointer;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
     transition: 0.3s ease;
 }
 
 /* ================== SIDEBAR ================== */
 .sidebar {
     position: fixed;
-    top: 60px;                      /* ✅ samakan dengan topbar */
+    top: 60px;
+    /* ✅ samakan dengan topbar */
     left: 0;
 
     width: 280px;
-    height: calc(100vh - 60px);     /* ✅ samakan juga */
+    height: calc(100vh - 60px);
+    /* ✅ samakan juga */
 
     background: rgba(52, 130, 160, 0.95);
     padding: 25px 15px;
 
     backdrop-filter: blur(3px);
-    box-shadow: 3px 0 10px rgba(0,0,0,0.3);
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.3);
 
     transform: translateX(-100%);
     transition: transform 0.35s ease;
@@ -73,7 +77,7 @@
     justify-content: space-between;
     gap: 10px;
     white-space: nowrap;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     text-decoration: none;
 }
@@ -93,11 +97,12 @@
     transition: margin-left 0.35s ease;
 }
 
-.sidebar:not(.hidden) ~ .content {
-    margin-left: 280px;             /* ikut geser */
+.sidebar:not(.hidden)~.content {
+    margin-left: 280px;
+    /* ikut geser */
 }
 
-.sidebar.hidden ~ .content {
+.sidebar.hidden~.content {
     margin-left: 0;
 }
 
@@ -119,7 +124,7 @@
 }
 
 .card-container::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.3);
+    background: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
 }
 
@@ -130,24 +135,24 @@
     height: 190px;
     padding: 15px;
     border-radius: 22px;
-    border: 4px solid rgba(255,255,255,0.55);
-    background: rgba(255,255,255,0.25);
+    border: 4px solid rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(10px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
     color: white;
 }
 
 /* Card Variants */
 .card.blue {
     background:
-        linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)),
-        rgba(0,110,255,0.4);
+        linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18)),
+        rgba(0, 110, 255, 0.4);
 }
 
 .card.orange {
     background:
-        linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)),
-        rgba(255,110,40,0.4);
+        linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18)),
+        rgba(255, 110, 40, 0.4);
 }
 
 /* ================== CARD CONTENT ================== */
@@ -206,10 +211,21 @@
     cursor: pointer;
 }
 
-.btn-green  { background: #3CC15F; }
-.btn-blue   { background: #1A73E8; }
-.btn-yellow { background: #E8C048; }
-.btn-red    { background: #e84848; }
+.btn-green {
+    background: #3CC15F;
+}
+
+.btn-blue {
+    background: #1A73E8;
+}
+
+.btn-yellow {
+    background: #E8C048;
+}
+
+.btn-red {
+    background: #e84848;
+}
 
 .side-btn {
     width: 100%;
@@ -224,16 +240,16 @@
     /* outline teks */
     text-shadow:
         -1px -1px 0 #000,
-         1px -1px 0 #000,
-        -1px  1px 0 #000,
-         1px  1px 0 #000;
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 10px;
     white-space: nowrap;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     text-decoration: none;
 }
@@ -259,15 +275,26 @@
     text-align: center;
     color: white;
     display: inline-block;
-    min-width: 80px; /* Menjaga lebar tetap konsisten */
-    cursor: default; /* Menghilangkan pointer tangan */
-    box-shadow: inset 0 -2px 4px rgba(0,0,0,0.2); /* Memberi sedikit dimensi */
+    min-width: 80px;
+    /* Menjaga lebar tetap konsisten */
+    cursor: default;
+    /* Menghilangkan pointer tangan */
+    box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+    /* Memberi sedikit dimensi */
 }
 
 /* Variasi Warna Background */
-.bg-green  { background: #3CC15F; }
-.bg-yellow { background: #E8C048; }
-.bg-red    { background: #e84848; }
+.bg-green {
+    background: #3CC15F;
+}
+
+.bg-yellow {
+    background: #E8C048;
+}
+
+.bg-red {
+    background: #e84848;
+}
 
 /* Pastikan tombol "Lihat" tetap menonjol */
 .btn-blue {
@@ -289,17 +316,21 @@
 /* ================== BADGE SURAT BARU ================== */
 .badge-new {
     position: absolute;
-    top: -12px; /* Menggantung sedikit di atas garis border kartu */
+    top: -12px;
+    /* Menggantung sedikit di atas garis border kartu */
     left: 50%;
-    transform: translateX(-50%); /* Agar tepat di tengah secara horizontal */
-    
-    background: #E84848; /* Warna merah sesuai gambar */
+    transform: translateX(-50%);
+    /* Agar tepat di tengah secara horizontal */
+
+    background: #E84848;
+    /* Warna merah sesuai gambar */
     color: white;
     padding: 4px 15px;
     font-size: 12px;
     font-weight: bold;
     border-radius: 8px;
-    border: 2px solid rgba(255, 255, 255, 0.8); /* Border putih tipis agar pop-out */
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    /* Border putih tipis agar pop-out */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 10;
     white-space: nowrap;
@@ -309,7 +340,8 @@
 .card {
     position: relative;
     /* ... kode lama ... */
-    margin-top: 15px; /* Tambahkan margin top agar badge tidak menabrak kartu di atasnya */
+    margin-top: 15px;
+    /* Tambahkan margin top agar badge tidak menabrak kartu di atasnya */
 }
 
 /* Memperbaiki tampilan status badge (Non-Button) */
@@ -325,5 +357,51 @@
     cursor: default;
 }
 
-.bg-yellow { background: #E8C048; }
-.bg-green  { background: #3CC15F; }
+.bg-yellow {
+    background: #E8C048;
+}
+
+.bg-green {
+    background: #3CC15F;
+}
+
+/* ================= SEARCH ================= */
+.search-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    /* 🔥 Kanan */
+    padding: 20px 20px 0;
+    margin-bottom: 10px;
+}
+
+.search-input {
+    width: 100%;
+    max-width: 320px;
+    /* 🔥 Lebih kecil */
+    padding: 10px 16px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    outline: none;
+}
+
+.search-input:focus {
+    background: white;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ================= JABATAN BADGE ================= */
+.jabatan-badge {
+    margin: 6px 0 0;
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 0.5px;
+}

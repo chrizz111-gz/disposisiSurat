@@ -1,47 +1,66 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Surat Berhasil Dikirim</title>
+  <title>Surat Berhasil Disetujui</title>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/notiforange.css">
 </head>
+
 <body>
 
-    <header class="topbar">
-        <img src="../assets/logo.png" class="logo" alt="Logo">
-        <h2>DISPOSISI SURAT</h2>
-    </header>
+  <header class="topbar">
+    <img src="../assets/logo.png" class="logo" alt="Logo">
+    <h2>DISPOSISI SURAT</h2>
+  </header>
 
   <section class="container">
     <div class="success-card">
 
       <div class="maskot-top">
-        <img src="../assets/maskot2.png" alt="Maskot">
+        <img src="../assets/mascot2.png" alt="Maskot">
       </div>
 
       <div class="success-icon">
         <img src="../assets/verify.png" alt="Success">
       </div>
 
-      <h1>Surat berhasil dikirim</h1>
+      <h1 id="notifJudul">Surat berhasil dikirim</h1>
 
-        <p class="desc">
-            Disposisi telah diteruskan ke Kepala
-            Sekolah. Status Saat Ini Menunggu
-            Konfirmasi Dari Penerima
-        </p>
+      <p class="desc" id="notifDesc">
+        Surat keluar telah dikirim dan menunggu
+        persetujuan Kepala Sekolah.
+      </p>
 
-      <button class="login-btn">
+      <button class="login-btn" id="btnKembali">
         Kembali
       </button>
-
-
-</a>
 
     </div>
   </section>
 
+  <script src="../js/api.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const tipe = params.get("tipe");
+    const btn = document.getElementById("btnKembali");
+
+    if (tipe === "kepsek-setujui") {
+      document.getElementById("notifJudul").textContent = "Surat berhasil disetujui";
+      document.getElementById("notifDesc").textContent =
+        "Surat keluar telah disetujui oleh Kepala Sekolah dan tersimpan di riwayat.";
+      btn.onclick = () => window.location.href = "homeKepsek.html";
+    } else {
+      // Default: TU upload surat keluar → kembali ke dashboard TU
+      btn.onclick = () => {
+        const aktif = getActiveJabatan().toLowerCase();
+        window.location.href = getDashboardUrl(aktif);
+      };
+    }
+  </script>
+
 </body>
+
 </html>

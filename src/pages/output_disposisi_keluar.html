@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disposisi Detail Surat Keluar</title>
+    <title>Output Disposisi Surat Keluar</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/disposisi_keluar.css">
 </head>
@@ -17,7 +17,7 @@
     </header>
 
     <div class="container-detail">
-        <h2 class="title">DETAIL SURAT KELUAR</h2>
+        <h2 class="title">OUTPUT SURAT KELUAR</h2>
 
         <div class="detail-wrapper">
 
@@ -47,6 +47,11 @@
                             <span class="value" id="valPerihal">-</span>
                         </div>
                         <div class="item-row">
+                            <span class="label">Tujuan</span>
+                            <span class="separator">:</span>
+                            <span class="value" id="valTujuan">-</span>
+                        </div>
+                        <div class="item-row">
                             <span class="label">Tanggal</span>
                             <span class="separator">:</span>
                             <span class="value" id="valTanggal">-</span>
@@ -57,8 +62,8 @@
                         <p>Lihat Lampiran (PDF)</p>
                     </div>
 
-                    <div class="left-button-area" style="margin-top:20px">
-                        <button class="btn-back" id="btnKembali">Dismiss</button>
+                    <div class="left-button-area">
+                        <button class="btn-back" id="btnKembali">← Kembali</button>
                     </div>
                 </div>
             </div>
@@ -66,49 +71,44 @@
             <!-- KOLOM KANAN -->
             <div class="right-panel">
                 <div class="card">
-                    <h3>Catatan</h3>
+                    <h3>Hasil Keputusan Kepsek</h3>
 
                     <div class="form-group">
-                        <label>Status Surat</label>
-                        <select id="statusSurat">
-                            <option value="">- Pilih Status Surat -</option>
-                            <option value="terima">Terima</option>
-                            <option value="tolak">Tolak</option>
-                        </select>
+                        <label>Status</label>
+                        <div id="valStatus" style="
+                            display: inline-block;
+                            padding: 6px 16px;
+                            border-radius: 20px;
+                            font-weight: bold;
+                            background: #E8C048;
+                            color: white;
+                            font-size: 14px;
+                        ">Menunggu</div>
                     </div>
 
-                    <div id="formTerima" class="hidden">
-                        <div class="form-group">
-                            <label>Catatan</label>
-                            <textarea id="catatanTerima" placeholder="Tulis catatan di sini ..."></textarea>
-                        </div>
+                    <div class="form-group">
+                        <label>Diproses Oleh</label>
+                        <input type="text" id="valKepsek" readonly>
                     </div>
 
-                    <div id="formTolak" class="hidden">
-                        <div class="form-group">
-                            <label>Catatan Penolakan</label>
-                            <textarea id="catatanTolak" placeholder="Masukkan alasan penolakan..."></textarea>
-                        </div>
+                    <div class="form-group">
+                        <label>Tanggal Diproses</label>
+                        <input type="text" id="valApprovalAt" readonly>
                     </div>
 
-                    <div class="button-group hidden" id="buttonArea">
-                        <button class="btn-kembali" id="btnTeruskan">Teruskan</button>
+                    <div class="form-group">
+                        <label>Catatan Kepsek</label>
+                        <textarea id="valCatatan" readonly style="min-height:120px"></textarea>
                     </div>
+
                 </div>
             </div>
 
         </div>
     </div>
 
-    <div id="customAlert" class="custom-alert" style="display:none;">
-        <div class="alert-box">
-            <p id="alertMessage"></p>
-            <button onclick="closeAlert()">OK</button>
-        </div>
-    </div>
-
     <script src="../js/api.js"></script>
-    <script src="../js/disposisi_keluar.js"></script>
+    <script src="../js/output_disposisi_keluar.js"></script>
 
 </body>
 

@@ -1,128 +1,107 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard Surat SMKN 2 Singosari</title>
-<link rel="stylesheet" href="../css/style.css">
-<link rel="stylesheet" href="../css/history.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Surat SMKN 2 Singosari</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/history.css">
 </head>
 
-    <body>
+<body>
 
-        <!-- HEADER -->
-        <header class="topbar">
-            <img src="../assets/logo.png" class="logo">
-            <h2>DISPOSISI SURAT</h2>
-        </header>
+    <!-- HEADER -->
+    <header class="topbar">
+        <img src="../assets/logo.png" class="logo">
+        <h2>DISPOSISI SURAT</h2>
+    </header>
 
-        <div class="history-container">
+    <div class="history-container">
 
-            <!-- HEADER FITUR -->
-            <div class="history-header">
+        <!-- HEADER FITUR -->
+        <div class="history-header">
 
-                <!-- TAB -->
-                <div class="tabs">
-                    <button class="tab active" data-jenis="semua">📄 Semua Surat</button>
-                    <button class="tab" data-jenis="masuk">📥 Surat Masuk</button>
-                    <button class="tab" data-jenis="keluar">📤 Surat Keluar</button>
-                </div>
-
-                <!-- SEARCH + FILTER -->
-                <div class="tools">
-                    <input type="text" placeholder="Cari surat..." class="search">
-
-                    <select class="filter" id="filterStatus">
-                        <option value="semua">Semua</option>
-                        <option value="disetujui">Disetujui</option>
-                        <option value="ditolak">Ditolak</option>
-                    </select>
-                </div>
-
+            <!-- TAB -->
+            <div class="tabs">
+                <button class="tab active" data-jenis="semua">📄 Semua Surat</button>
+                <button class="tab" data-jenis="masuk">📥 Surat Masuk</button>
+                <button class="tab" data-jenis="keluar">📤 Surat Keluar</button>
             </div>
 
-            <!-- TABLE -->
-            <div class="table-card">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Jenis Surat</th>
-                            <th>Tanggal</th>
-                            <th>Waktu</th>
-                            <th>Nomor</th>
-                            <th>Asal</th>
-                            <th>Perihal</th>
-                            <th>Status</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
+            <!-- SEARCH + FILTER -->
+            <div class="tools">
+                <input type="text" placeholder="Cari surat..." class="search">
 
-                    <tbody id="tableBody">
-                        <tr data-status="disetujui" data-jenis="masuk">
-                            <td>1</td>
-                            <td>Surat Masuk</td>
-                            <td>12 Okt 2025</td>
-                            <td>12.27</td>
-                            <td>001/A</td>
-                            <td>Dinas</td>
-                            <td>Undangan Rapat guru bersama Gubernur</td>
-                            <td><span class="status ok">Disetujui</span></td>
-                            <td><button class="btn-view">Lihat</button></td>
-                        </tr>
-
-                        <tr data-status="ditolak" data-jenis="keluar">
-                            <td>2</td>
-                            <td>Surat Keluar</td>
-                            <td>12 Okt 2025</td>
-                            <td>12.36</td>
-                            <td>002/B</td>
-                            <td>Sekolah</td>
-                            <td>Pengumuman Libur Idul Adha</td>
-                            <td><span class="status no">Ditolak</span></td>
-                            <td><button class="btn-view">Lihat</button></td>
-                        </tr>
-
-                    </tbody>
-                </table>
+                <select class="filter" id="filterStatus">
+                    <option value="semua">Semua</option>
+                    <option value="disetujui">Disetujui</option>
+                    <option value="ditolak">Ditolak</option>
+                </select>
             </div>
 
         </div>
+
+        <!-- TABLE -->
+        <div class="table-card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Jenis Surat</th>
+                        <th>Tanggal</th>
+                        <th>Waktu</th>
+                        <th>Nomor</th>
+                        <th>Asal</th>
+                        <th>Perihal</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tableBody">
+                </tbody>
+            </table>
+        </div>
+
+    </div>
 
     <!-- ================= HAMBURGER ================= -->
     <button id="toggleSidebar" class="hamburger" aria-label="Toggle Sidebar">
         III
     </button>
 
-        <!-- ================= SIDEBAR ================= -->
-        <aside id="sidebar" class="sidebar hidden">
-            <a href="home.html" class="side-btn">
-                BERANDA <img src="../assets/home.png" alt="">
-            </a>
+    <!-- ================= SIDEBAR ================= -->
+    <aside id="sidebar" class="sidebar hidden">
+        <a href="home.html" class="side-btn">
+            BERANDA <img src="../assets/home.png" alt="">
+        </a>
 
-            <a href="profile.html" class="side-btn">
-                PENGGUNA <img src="../assets/user.png" alt="">
-            </a>
+        <a href="profile.html" class="side-btn">
+            PENGGUNA <img src="../assets/user.png" alt="">
+        </a>
 
-            <a href="suratmasuk.html" class="side-btn">
-                SURAT MASUK <img src="../assets/in.png" alt="">
-            </a>
+        <a href="suratmasuk.html" class="side-btn">
+            SURAT MASUK <img src="../assets/in.png" alt="">
+        </a>
 
-            <a href="suratkeluar.html" class="side-btn">
-                SURAT KELUAR <img src="../assets/out.png" alt="">
-            </a>
+        <a href="suratkeluar.html" class="side-btn">
+            SURAT KELUAR <img src="../assets/out.png" alt="">
+        </a>
 
-            <a href="history.html" class="side-btn">
-                RIWAYAT <img src="../assets/history.png" alt="">
-            </a>
+        <a href="history.html" class="side-btn">
+            RIWAYAT <img src="../assets/history.png" alt="">
+        </a>
 
-            <a href="usermanage.html" class="side-btn">
-                MANAJEMEN AKUN <img src="../assets/users.png" alt="">
-            </a>  
-        </aside>
+        <a href="usermanage.html" class="side-btn">
+            MANAJEMEN AKUN <img src="../assets/users.png" alt="">
+        </a>
+    </aside>
 
-        <script src="../js/sidebar.js"></script>
-        <script src="../js/history.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/history.js"></script>
 
-    </body>
+</body>
+
 </html>

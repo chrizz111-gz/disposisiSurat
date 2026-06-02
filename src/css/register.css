@@ -1,30 +1,44 @@
+/* ============================================= */
+/* register.css — Halaman Tambah Akun            */
+/* ============================================= */
+
 /* BACKGROUND */
 .login-page {
-    padding-top: 100px;
+    padding-top: 80px;
     min-height: 100vh;
-    background: url("../assets/background.png") center / cover no-repeat;
+    /* 🔥 Ganti ke beranda.png (sama seperti page lain) */
+    background: url("../assets/beranda.png") center / cover no-repeat;
+    background-attachment: fixed;
 }
 
-/* JUDUL */
+/* ============================================= */
+/* JUDUL — HITAM (Sesuai Figma)                  */
+/* ============================================= */
+
 .login-title {
     text-align: center;
-    font-size: 42px; /* 🔥 lebih pas */
+    font-size: 42px;
     font-weight: 800;
     margin: 20px 0 10px;
+    /* 🔥 HITAM, tanpa text-shadow */
+    color: #1a1a1a;
+    text-shadow: none;
+    letter-spacing: 1px;
 }
 
-/* CONTAINER (lebih tinggi dari login) */
+/* ============================================= */
+/* CONTAINER                                     */
+/* ============================================= */
+
 .login-containers {
     width: 90%;
     max-width: 600px;
     margin: 20px auto;
-    padding: 45px 35px;
+    padding: 40px 35px;
     border-radius: 25px;
-
     background: rgba(70, 150, 180, 0.45);
     backdrop-filter: blur(10px);
-
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
 /* FORM */
@@ -32,48 +46,75 @@
     width: 100%;
 }
 
-/* INPUT */
+/* ============================================= */
+/* LABEL INPUT (Baru — Sesuai Figma)             */
+/* ============================================= */
+
+.input-label {
+    display: block;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+/* ============================================= */
+/* INPUT                                         */
+/* ============================================= */
+
 .input {
     width: 100%;
     padding: 14px 18px;
     border-radius: 40px;
     border: none;
-    margin-top: 18px;
+    margin-top: 0;
+    /* 🔥 Dihapus karena ada label */
     font-size: 15px;
     outline: none;
-
     background: #2f6fa1;
     color: white;
+    transition: 0.2s;
+}
+
+.input:focus {
+    box-shadow: 0 0 0 3px rgba(47, 111, 161, 0.3);
 }
 
 .input::placeholder {
-    color: rgba(255,255,255,0.7);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
 }
 
-/* SELECT biar mirip */
+/* SELECT */
 select.input {
     appearance: none;
     cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 18px center;
+    padding-right: 40px;
 }
 
-/* Pastikan container relatif terhadap isinya */
+/* ============================================= */
+/* PASSWORD BOX                                  */
+/* ============================================= */
+
 .password-box {
     position: relative;
     width: 100%;
 }
 
-/* Sesuaikan posisi mata */
 .password-box .show {
     width: 22px;
     height: auto;
     position: absolute;
     right: 20px;
-    /* Menghitung posisi tengah: 
-       input punya margin-top 18px, maka ikon harus turun sedikit */
-    top: calc(50% + 9px); 
+    top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
-    z-index: 10; /* Agar tidak tertindih input */
+    z-index: 10;
     opacity: 0.7;
     transition: 0.3s;
 }
@@ -82,42 +123,129 @@ select.input {
     opacity: 1;
 }
 
-/* Tambahkan padding kanan pada input agar teks tidak menabrak ikon mata */
 .password-box .input {
     padding-right: 50px;
 }
 
+/* ============================================= */
+/* JABATAN SECTION                               */
+/* ============================================= */
 
-/* TEXT */
-.signup-text {
-    margin-top: 20px;
-    text-align: center;
+.jabatan-section {
+    margin-top: 5px;
+    /* Dikurangi karena sudah ada label */
+}
+
+.jabatan-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.jabatan-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.jabatan-item select {
+    flex: 1;
+    margin-top: 0;
+}
+
+.btn-remove-jabatan {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+    flex-shrink: 0;
+}
+
+.btn-remove-jabatan:hover {
+    background: #c0392b;
+    transform: scale(1.1);
+}
+
+.btn-add-jabatan {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: 2px dashed rgba(255, 255, 255, 0.5);
+    border-radius: 40px;
+    background: transparent;
+    color: white;
     font-size: 14px;
-}
-
-.signup-text a {
-    color: #0d47ff;
     font-weight: 600;
-    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
-/* BUTTON */
+.btn-add-jabatan:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: white;
+}
+
+/* ============================================= */
+/* ERROR MESSAGE                                 */
+/* ============================================= */
+
+.error-msg {
+    color: #ff6b6b;
+    font-size: 13px;
+    margin-top: 10px;
+    text-align: center;
+    min-height: 20px;
+    font-weight: 500;
+}
+
+/* ============================================= */
+/* TOMBOL SIMPAN                                 */
+/* ============================================= */
+
 .btn-login {
     display: block;
-    margin: 35px auto 0;
-    padding: 12px 40px;
+    margin: 30px auto 0;
+    padding: 14px 60px;
     font-size: 18px;
-    border-radius: 10px;
+    font-weight: 700;
+    border-radius: 12px;
     border: none;
     background: #5aa6d9;
     color: white;
     cursor: pointer;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+    min-width: 200px;
+    text-align: center;
+    letter-spacing: 1px;
 }
 
-.btn-login:hover {
+.btn-login:hover:not(:disabled) {
     background: #3f8cc4;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
+
+.btn-login:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btn-loading {
+    display: inline-block;
+}
+
+/* ============================================= */
+/* ALERT                                         */
+/* ============================================= */
 
 .custom-alert {
     display: none;
@@ -137,8 +265,8 @@ select.input {
     padding: 25px;
     border-radius: 15px;
     text-align: center;
-    width: 300px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    width: 320px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     animation: popup 0.3s ease;
 }
 
@@ -152,10 +280,12 @@ select.input {
     background: #007bff;
     color: white;
     border: none;
-    padding: 10px 25px;
+    padding: 12px 30px;
     border-radius: 8px;
     cursor: pointer;
     font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s;
 }
 
 .alert-box button:hover {
@@ -167,8 +297,29 @@ select.input {
         transform: scale(0.7);
         opacity: 0;
     }
+
     to {
         transform: scale(1);
         opacity: 1;
+    }
+}
+
+/* ============================================= */
+/* RESPONSIVE                                    */
+/* ============================================= */
+
+@media (max-width: 480px) {
+    .login-title {
+        font-size: 32px;
+    }
+
+    .login-containers {
+        padding: 30px 20px;
+        width: 95%;
+    }
+
+    .btn-login {
+        width: 100%;
+        padding: 14px 30px;
     }
 }
