@@ -11,12 +11,12 @@
 
 <body class="login-page">
 
+    <!-- TOPBAR -->
     <header class="topbar">
         <img src="../assets/logo.png" class="logo" alt="logo">
         <h2>DISPOSISI SURAT</h2>
     </header>
 
-    <!-- 🔥 JUDUL HITAM -->
     <h2 class="login-title">TAMBAH AKUN</h2>
 
     <div class="login-containers">
@@ -59,14 +59,20 @@
             <!-- Error message -->
             <p id="errorMsg" class="error-msg"></p>
 
-            <!-- 🔥 TOMBOL SIMPAN -->
-            <button type="button" id="registerBtn" class="btn-login" onclick="handleRegister()">
-                <span class="btn-text">SIMPAN</span>
-                <span class="btn-loading" style="display:none;">Memuat...</span>
-            </button>
+            <!-- 🔥 BUTTON GROUP: Kembali + SIMPAN -->
+            <div class="button-group">
+                <a href="usermanage.html" class="btn-back-form">← Kembali</a>
+                <button type="button" id="registerBtn" class="btn-login" onclick="handleRegister()">
+                    <span class="btn-text">SIMPAN</span>
+                    <span class="btn-loading" style="display:none;">Memuat...</span>
+                </button>
+            </div>
         </form>
 
     </div>
+
+    <!-- 🔥 PADDING BOTTOM supaya bisa scroll -->
+    <div class="bottom-spacer"></div>
 
     <div id="customAlert" class="custom-alert" style="display:none;">
         <div class="alert-box">

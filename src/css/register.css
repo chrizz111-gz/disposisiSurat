@@ -1,26 +1,35 @@
 /* ============================================= */
-/* register.css — Halaman Tambah Akun            */
+/* register.css — Tambah Akun (Fix Scroll)       */
 /* ============================================= */
+
+/* 🔥 FORCE HTML & BODY BISA SCROLL */
+html,
+body {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    height: auto !important;
+    min-height: 100vh;
+}
 
 /* BACKGROUND */
 .login-page {
     padding-top: 80px;
     min-height: 100vh;
-    /* 🔥 Ganti ke beranda.png (sama seperti page lain) */
     background: url("../assets/beranda.png") center / cover no-repeat;
     background-attachment: fixed;
+    height: auto !important;
+    overflow: visible !important;
 }
 
 /* ============================================= */
-/* JUDUL — HITAM (Sesuai Figma)                  */
+/* JUDUL                                         */
 /* ============================================= */
 
 .login-title {
     text-align: center;
     font-size: 42px;
     font-weight: 800;
-    margin: 20px 0 10px;
-    /* 🔥 HITAM, tanpa text-shadow */
+    margin: 10px 0 20px;
     color: #1a1a1a;
     text-shadow: none;
     letter-spacing: 1px;
@@ -33,12 +42,14 @@
 .login-containers {
     width: 90%;
     max-width: 600px;
-    margin: 20px auto;
+    margin: 0 auto 30px;
     padding: 40px 35px;
     border-radius: 25px;
     background: rgba(70, 150, 180, 0.45);
     backdrop-filter: blur(10px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    position: relative;
+    z-index: 1;
 }
 
 /* FORM */
@@ -47,7 +58,7 @@
 }
 
 /* ============================================= */
-/* LABEL INPUT (Baru — Sesuai Figma)             */
+/* LABEL INPUT                                   */
 /* ============================================= */
 
 .input-label {
@@ -70,7 +81,6 @@
     border-radius: 40px;
     border: none;
     margin-top: 0;
-    /* 🔥 Dihapus karena ada label */
     font-size: 15px;
     outline: none;
     background: #2f6fa1;
@@ -133,7 +143,6 @@ select.input {
 
 .jabatan-section {
     margin-top: 5px;
-    /* Dikurangi karena sudah ada label */
 }
 
 .jabatan-list {
@@ -207,13 +216,46 @@ select.input {
 }
 
 /* ============================================= */
-/* TOMBOL SIMPAN                                 */
+/* BUTTON GROUP — KEMBALI + SIMPAN               */
 /* ============================================= */
 
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Button Kembali */
+.btn-back-form {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #2B6F8B;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 14px 32px;
+    border-radius: 12px;
+    transition: 0.2s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    min-width: 160px;
+    text-align: center;
+    border: 2px solid #2B6F8B;
+}
+
+.btn-back-form:hover {
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Button SIMPAN */
 .btn-login {
-    display: block;
-    margin: 30px auto 0;
-    padding: 14px 60px;
+    padding: 14px 50px;
     font-size: 18px;
     font-weight: 700;
     border-radius: 12px;
@@ -223,9 +265,11 @@ select.input {
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     transition: 0.3s;
-    min-width: 200px;
+    min-width: 180px;
     text-align: center;
     letter-spacing: 1px;
+    position: relative;
+    z-index: 10;
 }
 
 .btn-login:hover:not(:disabled) {
@@ -241,6 +285,15 @@ select.input {
 
 .btn-loading {
     display: inline-block;
+}
+
+/* ============================================= */
+/* BOTTOM SPACER                                 */
+/* ============================================= */
+
+.bottom-spacer {
+    height: 60px;
+    width: 100%;
 }
 
 /* ============================================= */
@@ -274,6 +327,7 @@ select.input {
     margin-bottom: 20px;
     font-size: 16px;
     color: #333;
+    line-height: 1.5;
 }
 
 .alert-box button {
@@ -318,8 +372,14 @@ select.input {
         width: 95%;
     }
 
+    .button-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-back-form,
     .btn-login {
         width: 100%;
-        padding: 14px 30px;
+        min-width: unset;
     }
 }

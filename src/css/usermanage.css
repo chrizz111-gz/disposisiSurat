@@ -1,21 +1,39 @@
 /* ============================================= */
-/* usermanage.css — Manajemen Akun (Final)       */
+/* usermanage.css — Force Scroll Fix             */
 /* ============================================= */
-.wrapper.manage-bg {
-    /* GANTI NAMA FILE INI */
-    background: url("../assets/IMG_0411.PNG") center / cover no-repeat;
-    background-attachment: fixed;
+
+/* 🔥 FORCE HTML & BODY BISA SCROLL */
+html,
+body {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    height: auto !important;
+    min-height: 100vh;
 }
 
-/* Content area */
+/* 🔥 FORCE WRAPPER BISA EXPAND */
+.wrapper {
+    margin-top: 60px;
+    width: 100%;
+    min-height: calc(100vh - 60px);
+    display: flex;
+    height: auto !important;
+    /* 🔥 Penting: auto bukan 100% */
+    overflow: visible !important;
+    /* 🔥 Penting: visible bukan hidden */
+}
+
+/* 🔥 FORCE CONTENT BISA EXPAND */
 .content {
     flex: 1;
     padding: 30px 40px;
     display: flex;
     flex-direction: column;
     transition: margin-left 0.35s ease;
-    align-items: center;
-    /* Card di tengah */
+    overflow: visible !important;
+    /* 🔥 Penting: visible bukan hidden */
+    height: auto !important;
+    min-height: calc(100vh - 60px);
 }
 
 /* Kalau sidebar terbuka */
@@ -36,9 +54,7 @@
     flex-shrink: 0;
     width: 100%;
     max-width: 900px;
-    /* Batasi lebar maksimal */
     gap: 20px;
-    /* Jarak antara title dan search */
 }
 
 .page-title {
@@ -60,7 +76,7 @@
     background: rgba(255, 255, 255, 0.9);
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
     outline: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/vg' width='16' height='16' fill='%23999' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23999' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: 18px center;
     background-size: 16px;
@@ -77,37 +93,17 @@
     color: #aaa;
 }
 
-/* ================== LIST (SCROLLABLE) ================== */
+/* ================== LIST ================== */
 .manage-list {
-    flex: 1;
-    overflow-y: auto;
     display: flex;
     flex-direction: column;
     gap: 15px;
     padding: 5px 0;
-    min-height: 0;
     width: 100%;
     max-width: 900px;
-    /* Samakan dengan header */
     align-items: center;
-}
-
-/* Scrollbar */
-.manage-list::-webkit-scrollbar {
-    width: 6px;
-}
-
-.manage-list::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.manage-list::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
-}
-
-.manage-list::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 0, 0, 0.25);
+    flex-shrink: 0;
+    /* 🔥 Jangan shrink */
 }
 
 /* ================== CARD ================== */
@@ -122,9 +118,9 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.6);
     transition: 0.25s ease;
-    flex-shrink: 0;
     width: 100%;
     max-width: 900px;
+    flex-shrink: 0;
 }
 
 .user-card:hover {
@@ -214,60 +210,55 @@
     display: flex;
     justify-content: flex-end;
     gap: 15px;
-    padding-top: 25px;
-    flex-shrink: 0;
+    padding: 25px 0 60px;
+    /* 🔥 Banyak padding bawah */
     width: 100%;
     max-width: 900px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 100;
 }
 
 /* Tombol Riwayat Aktivitas */
 .btn-log {
     padding: 14px 32px;
-    /* Lebih besar */
     border: none;
     border-radius: 12px;
     background: #6FBCE1;
     color: white;
     font-size: 16px;
-    /* Lebih besar */
     font-weight: 600;
     cursor: pointer;
     transition: 0.2s;
     box-shadow: 0 4px 12px rgba(111, 188, 225, 0.3);
     min-width: 180px;
-    /* Lebar minimal */
     text-align: center;
-}
-
-.btn-log:hover {
-    background: #5aadd4;
-    transform: translateY(-1px);
-    box-shadow: 0 6px 16px rgba(111, 188, 225, 0.4);
+    position: relative;
+    z-index: 101;
 }
 
 /* Tombol Tambah Akun */
 .btn-tambah {
     padding: 14px 32px;
-    /* Lebih besar */
     border: none;
     border-radius: 12px;
     background: #2B6F8B;
     color: white;
     font-size: 16px;
-    /* Lebih besar */
     font-weight: 600;
     cursor: pointer;
     transition: 0.2s;
     box-shadow: 0 4px 12px rgba(43, 111, 139, 0.3);
     min-width: 180px;
-    /* Lebar minimal */
     text-align: center;
+    position: relative;
+    z-index: 101;
 }
 
+.btn-log:hover,
 .btn-tambah:hover {
-    background: #245d75;
-    transform: translateY(-1px);
-    box-shadow: 0 6px 16px rgba(43, 111, 139, 0.4);
+    transform: translateY(-2px);
+    filter: brightness(1.1);
 }
 
 /* ================== EMPTY STATE ================== */

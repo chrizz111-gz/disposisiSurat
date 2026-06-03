@@ -1,73 +1,90 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Log Activity</title>
+  <title>Riwayat Aktivitas</title>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/log.css">
 </head>
+
 <body>
 
-    <header class="topbar">
-        <img src="../assets/logo.png" class="logo" alt="Logo">
-        <h2>DISPOSISI SURAT</h2>
-    </header>
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <img src="../assets/logo.png" class="logo" alt="Logo">
+    <h2>DISPOSISI SURAT</h2>
+  </header>
 
-  <!-- BACKGROUND -->
-  <img src="../assets/beranda.png" class="background">
+  <!-- CONTENT (tanpa wrapper & sidebar) -->
+  <main class="log-content">
 
-  <!-- MAIN CARD -->
-  <section class="card">
-
-    <!-- HEADER CARD -->
-    <div class="card-header">
-
-      <div class="title-area">
-
-        <div class="icon-box">
-          <img src="../assets/log.png">
-        </div>
-
-        <h1>LOG ACTIVITY</h1>
-
-      </div>
-
-      <!-- SEARCH -->
-      <div class="search-box">
-
-        <img src="../assets/pencarian.png">
-
-        <input 
-        type="text" 
-        id="searchInput"
-        placeholder="Cari tanggal..."
-        >
-
-      </div>
-
+    <!-- HEADER -->
+    <div class="log-header">
+      <a href="usermanage.html" class="back-btn">← Kembali</a>
+      <h1 class="page-title">📋 RIWAYAT AKTIVITAS</h1>
     </div>
 
-    <!-- TABLE -->
-    <div class="table-wrapper" id="tableWrapper">
-
-      <!-- TABLE HEADER -->
-      <div class="table-header">
-
-        <div>WAKTU</div>
-        <div>PENGGUNA</div>
-        <div>AKTIVITAS</div>
-
+    <!-- FILTER CARD -->
+    <div class="filter-card">
+      <div class="filter-group">
+        <label>Tanggal</label>
+        <input type="date" id="tanggalFilter">
       </div>
 
-      <!-- DATA DARI JS MASUK KE SINI -->
-      <div id="logContainer"></div>
+      <div class="filter-group">
+        <label>Pengguna</label>
+        <select id="penggunaFilter">
+          <option value="">Semua Pengguna</option>
+        </select>
+      </div>
 
+      <div class="filter-group">
+        <label>Aktivitas</label>
+        <select id="aktivitasFilter">
+          <option value="">Semua Aktivitas</option>
+          <option value="login">Login</option>
+          <option value="logout">Logout</option>
+          <option value="create_surat">Membuat Surat</option>
+          <option value="delete_surat">Menghapus Surat</option>
+          <option value="forward_surat">Meneruskan Surat</option>
+          <option value="read_surat">Membaca Surat</option>
+          <option value="approve_surat">Menyetujui Surat</option>
+          <option value="reject_surat">Menolak Surat</option>
+          <option value="create_user">Membuat Akun</option>
+          <option value="delete_user">Menghapus Akun</option>
+          <option value="update_user">Mengubah Akun</option>
+        </select>
+      </div>
     </div>
 
-  </section>
+    <!-- TABLE CARD -->
+    <div class="table-card">
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>WAKTU</th>
+              <th>PENGGUNA</th>
+              <th>AKTIVITAS</th>
+              <th>DETAIL</th>
+            </tr>
+          </thead>
+          <tbody id="activityTable">
+            <tr>
+              <td colspan="4" class="loading-cell">Memuat data...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
+  </main>
+
+  <script src="../js/api.js"></script>
   <script src="../js/log.js"></script>
 
 </body>
+
 </html>
